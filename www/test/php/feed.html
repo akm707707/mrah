@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>مراح</title>
+	<link rel="icon" type="image/png" href="imgs/icons/favicon.ico">
+	<link rel="apple-touch-icon" href="imgs/icons/apple-touch-icon.png">
+    <link href="css/themes/lite-purple.min.css" rel="stylesheet">
+    <link href="css/extra/animatioin.css" rel="stylesheet">
+    <link href="css/extra/iosfix.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/plugins/dropzone.min.css" /> -->
+	<link href="css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="css/plugins/cropper.min.css" /> -->
+    <link rel="stylesheet" href="css/plugins/animate.css" />
+    <!-- <link rel="stylesheet" href="../dist-assets/css/plugins/datepicker/bootstrap-datepicker.css" /> -->
+    <!-- <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker.min.css" /> -->
+    <!-- <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker3.min.css" /> -->
+	<script src="js/plugins/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/plugins/Semantic/semantic.rtl.min.css">
+	<!-- <script src="js/scripts/customizer.script.min.js"></script> -->
+	<!-- <script src="js/calculations.js"></script> -->
+
+<script>
+// For verify php
+
+</script>
+
+</head>
+
+<style>
+/* fix a bug i cant find */
+.ui.selection.dropdown {
+  height: 35.4px !important;
+} 
+</style>
+
+
+<body class="text-left">
+    <div class="app-admin-wrap layout-sidebar-compact clearfix">
+        <div class="main-content-wrap d-flex flex-column mb-5">
+            <div class="main-header">
+                <div class="logo" style="display:block;">
+					<img id="logo" src="imgs/logo_out.jpg" >
+                </div>
+                <div class="title mobilehide" style="margin-right: 9vw;">
+					<h1></h1>
+                </div>
+                <!-- <div class="menu-toggle" style="display:none;"><div></div><div></div><div></div></div> -->
+                
+                <div style="margin: auto; display:none;"></div>
+                <div class="header-part-right">
+                    <!-- Full screen toggle -->
+                    <!-- <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i> -->
+					<!-- Notificaiton -->
+                    <div class="dropdown pl-3" style="margin-bottom:-6px">
+                        <div class="badge-top-container" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- <span class="badge badge-primary">3</span> -->
+                            <!-- <i class="i-Bell text-muted header-icon"  -->
+							<i class="fa-regular fa-bell" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                        </div>
+					</div>
+                    <!-- Customizer Dropdown -->
+                    <!-- <i class="i-Gear header-icon  d-sm-inline-block callcustomizer" ></i> -->
+					<a href="finance.html" target="">
+						<img src="imgs/sar.svg"  alt="Description of the image" width="22" height="22" class="filter-grey"/>
+					</a>
+					<a href="setting.html" target="" >
+						<i class="fa-solid fa-gear pr-3" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;margin-top: 5px;"></i>
+					</a>					
+                    <!-- sign out -->
+					<i class="fa-solid fa-power-off header-icon pr-2 signout" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                    <!-- Notificaiton End -->
+                    <!-- User avatar dropdown -->
+                    <!-- <div class="dropdown"> -->
+                        <!-- <div class="user col align-self-end "> -->
+                            <!-- <img src="" id="avatar" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                            <!-- <div class="dropdown-menu dropdown-menu-left" aria-labelledby="avatar"> -->
+                                <!-- <div class="dropdown-header"> -->
+                                    <!-- <i class="mr-1 empname"></i>   -->
+                                <!-- </div> -->
+                                <!-- <a class="dropdown-item signout" >خروج</a> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+            </div><!-- ============ Body content start ============= -->
+            <div class="main-content">
+                <div class="breadcrumb mb-0">
+				<div class="row pb-3" style="width: 100%;">
+                    <h4 class="mr-2 mrahtitle col-lg-11 col-md-10 col-sm-8 col-xs-8 ml-0 pl-0 " style="padding-right: 15px !important;padding-top: 0.35rem !important;"></h4>
+					<h4 class="mr-2 col-lg-11 col-md-10 col-sm-8 col-xs-8 ml-0 pl-0 text-muted " style="padding-right: 15px !important;position: absolute;padding-top: 32px;">إدارة الأعلاف</h4>
+					<!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl-0 " ></div> -->
+					<div class="dropdown col-lg-2 col-md-2 col-sm-4 col-xs-4 pl-0 " >
+					  <button class="btn btn-outline-emerald btn-lg  dropdown-toggle maxwidth" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">إضافه</button>
+					  <div class="dropdown-menu text-1" >
+						<a class="dropdown-item emerald Addfeed" >مشتريات أعلاف</a>
+						<a class="dropdown-item emerald Addsupplier" >بائع أعلاف</a>
+					  </div>
+					</div>
+                </div>
+                </div>
+                <div class="separator-breadcrumb border-top"></div>
+                <div class="row mainrow mb-5">			
+
+
+
+				</div>			
+            </div>
+        </div>
+    </div><!-- ============ Search UI Start ============= -->
+    <!-- ============ ADD Feed MODAL ============= -->
+	<div class="modal fade Addfeedmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <!-- <div class="modal-dialog modal-lg "> -->
+        <div class="modal-dialog modal-lg " style="margin: 0 auto;">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-emerald m">
+									<div class="close " style="position: absolute;position: absolute;  left: 5px;  top: 5px;">
+										<i class="fa fa-times text-175 text-c-white " ></i>
+									</div>
+								<h4 class="marginless" style="">
+								</h4>
+							</div>
+                            <div class="card-body">
+                                <form>
+									<div class="row">
+										<div role="group" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
+											<label class=" text-1">
+											<span class="cleardd">الصنف</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="صنف الأعلاف شعير، برسيم، مكعب .. إلخ"></i>
+											</label>
+											<select class="ui fluid search dropdown typedd" name="type" >
+												<option value="barley50">شعير 50 كيلو</option>
+												<option value="barley40">شعير 40 كيلو</option>
+												<option value="alfalfa">برسيم</option>
+												<option value="hay">تبن</option>
+												<option value="rowdas">رودس</option>
+												<option value="mixed">مخلوط</option>
+												<option value="bluepanic">بلوبانيك</option>
+												<option value="corn50">ذره 50 كيلو</option>
+												<option value="corn40">ذره 40 كيلو</option>
+												<option value="barn50">نخاله 50 كيلو</option>
+												<option value="bread">خبز</option>
+											</select>
+										</div>
+										<div role="group" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form-group">
+											<label class=" text-1">
+											<span class="cleardd">الكميه</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="كمية الأعلاف المشتراه سواء كيس أو بلكه أو باله"></i>
+											</label>
+											<select class="ui fluid search dropdown quantitydd" name="quantity" >
+											</select>
+										</div>
+										<div role="group" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">تكلفة الوحده</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="سعر تكلفة الوحده الواحده من الأعلاف"></i>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<!-- <input class="form-control" name="unitcost" type="text" inputmode="numeric" placeholder="" aria-label="" aria-describedby="basic-addon1" > -->
+												<input class="form-control" name="unitcost" type="text" inputmode="decimal" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+										<div role="group" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">التكلفة الاجماليه</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="سعر التكلفه الاجماليه للعلف المشترى"></i>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="totalcost" type="text" inputmode="decimal" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+
+											</div>
+										</div>
+										<div role="group" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">حالة الدفع</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="هل تم دفعه كاملا او جزئياً أو بالدين"></i>
+											</label>
+											<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0">
+												<div class="btn-group radius justified " role="group" aria-label="Basic example" >
+													<button class="btn pressable  btn-lg inputpadding pressable-emerald " type="button" name="full" checked >مدفوع بالكامل</button>
+													<button class="btn pressable  btn-lg inputpadding pressable-emerald" type="button" name="partial">دفع جزئي</button>
+													<button class="btn pressable  btn-lg inputpadding pressable-emerald" type="button" name="debt">دين بالكامل</button>
+												</div>
+											</div>									
+											<div class="col-md-2 form-group col-sm-3 " style="display:none;" >	<!-- Hidden -->
+												<input type="radio" name="settlement" value="full" />
+												<input type="radio" name="settlement" value="partial" />
+												<input type="radio" name="settlement" value="debt" />	<!-- End of Hidden -->
+											</div>
+											<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group pt-2 pr-0 pl-0" style="display:none;">
+												<label class="centered">المبلغ الجزئي المدفوع</label>
+												<!-- <div role="group" class="input-group col-xs-12 col-sm-12	col-md-12 p-0"> -->
+												<div role="group" class="col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+													<input name="paid" type="text" inputmode="decimal" placeholder="" class="form-control form-primary" value="">
+												</div>
+											</div>
+										</div>
+										<div role="group" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">ملاحظات</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="أية ملاحظات تريد إضافتها"></i>
+												<span class="position-absolute text-075 optional" >اختياري</span>
+											</label>
+
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="remarks" type="text" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+										<div role="group" class="col-lg-12 col-md-12  col-sm-12 form-group">
+											<label class=" text-1">
+											<span class="cleardd">موزع سابق</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="قائمة الموزعين المضافين مسبقاً. اختر منها لتعبئة الحقول التالية تلقائياً"></i>
+											</label>
+											<select class="ui fluid search dropdown supplierdd" name="" >
+											</select>
+										</div>
+										<div role="group" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">اسم الموزع</span>
+												<span class="position-absolute text-075 optional" >اختياري</span>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0">
+												<input class="form-control" name="suppliername" type="text" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+										<div role="group" class="col-lg-6 col-md-6 col-sm-6 col-xs-6 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">رقم جواله</span>
+												<span class="position-absolute text-075 optional" >اختياري</span>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="suppliermobile" type="text" inputmode="decimal" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>			
+									</div>
+									<div class="row">
+										<div class="col-md-12 centered submitdiv mt-1" style="" >
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="display:none;font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-redo-alt" style="font-size: 30px;"></i></span></button>
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-plus" style="font-size: 30px;"></i></span></button>
+										</div>	
+									</div>
+									<label class="text-12 text-c-red m-0"><i class="dropdown icon text-c-black text-16" style="margin: 0;font-size: 14px;"></i>لحذف مدخلات القوائم المنسدله اضغط على وصف المدخل أو على السهم المتجه لأسفل أيسر القائمه بعد فتحها</label>
+								</form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- ============ ADD Supplier MODAL ============= -->
+	<div class="modal fade Addsuppliermodal pt-5 pb-5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-emerald m">
+									<div class="close " style="position: absolute;position: absolute;  left: 5px;  top: 5px;">
+										<i class="fa fa-times text-175 text-c-white " ></i>
+									</div>
+								<h4 class="marginless" style="">
+								</h4>
+							</div>
+                            <div class="card-body">
+                                <form>
+									<div class="row">
+										<div role="group" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">اسم الموزع</span>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="suppliername" type="text" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+										<div role="group" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">رقم جوال الموزع</span>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="suppliermobile" type="text" inputmode="decimal" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>			
+									</div>
+									<div class="row">
+										<div class="col-md-12 centered submitdiv mt-1" style="" >
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="display:none;font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-redo-alt" style="font-size: 30px;"></i></span></button>
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-plus" style="font-size: 30px;"></i></span></button>
+										</div>	
+									</div>
+                                	<!-- <input class="form-control form-primary" name="key"	value=""  hidden /> -->
+								</form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- ============ Edit  Feed MODAL ============= -->
+	<div class="modal fade Editmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-emerald m">
+									<div class="close " style="position: absolute;position: absolute;  left: 5px;  top: 5px;">
+										<i class="fa fa-times text-175 text-c-white " ></i>
+									</div>
+								<h4 class="marginless" style="">
+								</h4>
+							</div>
+                            <div class="card-body">
+                                <form>
+									<div class="row">
+										<input class="form-control" name="id" type="hidden" >
+										<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">كمية العلف</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="كمية العلف الموجود في المخزون"></i>
+											</label>
+
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="quantity" type="text" inputmode="decimal" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+										<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">سعر الوحده</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="سعر التكلفه لكل وحدة علف (كيس أو بلكه)"></i>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="unitcost" type="text" inputmode="decimal" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 centered submitdiv mt-1" style="" >
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="display:none;font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-redo-alt" style="font-size: 30px;"></i></span></button>
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-plus" style="font-size: 30px;"></i></span></button>
+										</div>	
+									</div>
+									
+									<div class="body alert-card alert-danger temp text-1" role="alert" style="position: relative;text-align: justify;border-radius: 10px;padding: 0.75rem 1.25rem;"><button class="closealert" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><strong class="text-capitalize">تحذير ! </strong>
+									يرجى عدم تعديل كمية الأعلاف أو تكلفتها إلا عند الضروره القصوى. يقوم البرنامج يجمبع العمليات الحسابيه بدقه تلقائياً. لا يتم الإستعانه بالتحديث اليدوي إلا في حالات نادره غالباً ما تتعلق بحذف المشتريات بعد فتره من الإستهلاك. لا تقم بالتحديث إلا عند ملاحظة إختلاف سعري
+									</div>
+									<!-- <div class="alert body alert-card alert-danger temp text-1" role="alert" style="position: relative;text-align: justify;"><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><strong class="text-capitalize">تحذير ! </strong> -->
+									<!-- يرجى عدم تعديل كمية الأعلاف أو تكلفتها إلا عند الضروره القصوى. يقوم البرنامج يجمبع العمليات الحسابيه بدقه تلقائياً. لا يتم الإستعانه بالتحديث اليدوي إلا في حالات نادره غالباً ما تتعلق بحذف المشتريات بعد فتره من الإستهلاك. لا تقم بالتحديث إلا عند ملاحظة إختلاف سعري -->
+									</div>
+								</form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- ============ Delete  Feed MODAL ============= -->
+    <div class="modal fade Delmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+				<div class="modalrow ">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-emerald m">
+									<div class="close " style="position: absolute;position: absolute;  left: 5px;  top: 5px;">
+										<i class="fa fa-times text-175 text-c-white " ></i>
+									</div>
+								<h4 class="marginless" style="">حذف مراح
+								</h4>
+							</div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row">
+										<h5 class="centered mb-4">يرجى التأكيد</h5>
+                                        <div class="col-md-12 centered">
+											<a class="btn btn-danger btn-lg text-white btn-rounded deleteitem" style="">حذف</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- ============ columntoggle MODAL ============= -->
+    <div class="modal fade columntoggle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-emerald m"><h4 class="marginless"style="">إظهار وإخفاء الأعمده</h4></div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row checkboxes">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <form>
+								    <div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 mb-1 centered hideshow"><label class="checkbox checkbox-outline-primary" ><input class="global" name="select" type="checkbox" checked ><span>تحديد الكل</span><span class="checkmark"></span></label></div>									
+									</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- ============ LOADER MODAL ============= -->
+    <div class="modal fade loader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg " style="width: fit-content;  max-width: 700px;	margin: 1.75rem auto;">
+			<div class="spinner-bubble spinner-bubble-primary m-5"></div>
+		</div>
+    </div>
+	<!-- ============ Search UI End ============= -->
+    <div class="customizer" style="display:none;" >
+        <div class="handle" style="display:none;"><i class="i-Gear spin"></i></div>
+        <div class="customizer-body" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+            <div class="accordion" id="accordionCustomizer">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <p class="mb-0">تغيير لون الموقع</p>
+                    </div>
+                    <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionCustomizer">
+                        <div class="card-body">
+                            <div class="colors sidebar-colors"><a class="color gradient-purple-indigo" data-sidebar-class="sidebar-gradient-purple-indigo"><i class="i-Eye"></i></a><a class="color gradient-black-blue" data-sidebar-class="sidebar-gradient-black-blue"><i class="i-Eye"></i></a><a class="color gradient-black-gray" data-sidebar-class="sidebar-gradient-black-gray"><i class="i-Eye"></i></a><a class="color gradient-steel-gray" data-sidebar-class="sidebar-gradient-steel-gray"><i class="i-Eye"></i></a><a class="color dark-purple active" data-sidebar-class="sidebar-dark-purple"><i class="i-Eye"></i></a><a class="color slate-gray" data-sidebar-class="sidebar-slate-gray"><i class="i-Eye"></i></a><a class="color midnight-blue" data-sidebar-class="sidebar-midnight-blue"><i class="i-Eye"></i></a><a class="color blue" data-sidebar-class="sidebar-blue"><i class="i-Eye"></i></a><a class="color indigo" data-sidebar-class="sidebar-indigo"><i class="i-Eye"></i></a><a class="color pink" data-sidebar-class="sidebar-pink"><i class="i-Eye"></i></a><a class="color red" data-sidebar-class="sidebar-red"><i class="i-Eye"></i></a><a class="color purple" data-sidebar-class="sidebar-purple"><i class="i-Eye"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card"> -->
+                    <!-- <div class="card-header" id="headingOne"> -->
+                        <!-- <p class="mb-0">RTL</p> -->
+                    <!-- </div> -->
+                    <!-- <div class="collapse show" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionCustomizer"> -->
+                        <!-- <div class="card-body"> -->
+                            <!-- <label class="checkbox checkbox-primary"> -->
+                                <!-- <input id="rtl-checkbox" type="checkbox" /><span>Enable RTL</span><span class="checkmark"></span> -->
+                            <!-- </label> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+<div>
+    <!-- <script src="js/plugins/jquery-3.7.1.min.js"></script> -->
+    <script src="js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="js/scripts/script.min.js"></script>
+    <script src="js/scripts/sidebar.compact.script.min.js"></script>
+    <!-- <script src="js/scripts/customizer.script.min.js"></script> -->
+    <!-- <script src="js/plugins/echarts.min.js"></script> -->
+    <!-- <script src="js/scripts/echart.options.min.js"></script> -->
+    <!-- <script src="js/scripts/dashboard.v1.script.min.js"></script> -->
+    <!-- <script src="js/plugins/dropzone.min.js"></script> -->
+    <!-- <script src="js/scripts/dropzone.script.min.js"></script> -->
+    <!-- <script src="js/plugins/cropper.min.js"></script> -->
+    <!-- <script src="js/scripts/cropper.script.min.js"></script> -->
+    <!-- <script src="js/plugins/datepicker/bootstrap-datepicker.min.js"></script> -->
+    <!-- <script src="js/plugins/datepicker/locales/bootstrap-datepicker.ar.min.js"></script> -->
+	<!-- <script src="js/plugins/datatables.min.js"></script> -->
+	<script src="js/plugins/allfontawesome7.js"></script>
+	<script src="js/plugins/Semantic/semantic.min.js"></script>
+	<script src="js/scripts/tooltip.script.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+	<script src="js/calculations.js"></script>
+</div>
+<script>
+$(document).ready(function(){
+
+var username;
+var savedbreed;
+var savedgender;
+var savedtagcolor;
+var savedage;
+var savedweight;
+var savedremarks;
+var savedsavedcost;
+var savedinclusiondate;
+
+const leadzero = (num, places) => String(num).padStart(places, '0')				//userdataid = leadzero(identifier, 4)
+
+// verify login credintials and retreive Bussniess data
+var start = new Date().getTime();
+ $.ajax({	
+	type: 'POST',	
+	url    : "php/verify.php",
+ })
+ .done(function(response) {												//console.log(response); 
+ var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+
+	if ( response.id == 'success' ) {		
+	
+		userid = response.data.userid;
+		name = response.data.name;
+		mobile = response.data.mobile;
+		email = response.data.email;
+		//pass = response.data.pass;
+		mrah = response.data.mrah;
+		time = response.data.time;
+		if ( response.data.mrahid && response.data.mrahname ) {
+			mrahid = response.data.mrahid;
+			mrahname = response.data.mrahname;
+			
+			$( ".title" ).find("h1").html(name);
+			$( ".mrahtitle" ).html('مراح '+mrahname);
+		} else {
+			console.log("not sucess");
+			showalert('danger','لم تقم بإختيار المراح');
+			setTimeout(function() {    window.location.replace("index.html");	}, 5000);
+		}
+	} else {
+		console.log("not sucess");
+		window.location.replace("login.html");
+	}
+  });
+
+let isSubmitting = false;
+var start = new Date().getTime();
+$.ajax({
+	type: 'POST',
+	url    : 'php/feed.php',
+	data: ({mobile: 'hi'}),
+})
+.done(function(response) {
+	
+	var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+	setTimeout(function() {    $('.loader').modal('hide');	}, 500);
+	var j = 0;
+	var feednumbasedonquantity = 0;
+	var intarr = [];
+	var decarr = [];
+	var suppliernamearr = [];
+	var suppliermobilearr = [];
+	var status = response.id;		
+	<!-- var statusmessage = response.message; -->
+	if ( status == 'success' ) {
+		var feednum = response.feednum;
+		var suppliernum = response.suppliernum;
+		var purchasenum = response.purchasenum;
+		if ( feednum > 0 ) {	
+			for (var i = 0; i < response[j].length; i++) {
+				if ( response[j][i].quantity > 0 ) {	feednumbasedonquantity++;
+					var intiger = Math.floor(response[j][i].dailyintake);		intarr.push(intiger); 
+					var decimal = response[j][i].dailyintake - intiger;			decarr.push(decimal);
+					 
+					newcard = '';
+					newcard += '<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-4">';
+					<!-- newcard +=  '<div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4" style="overflow: inherit;">'; -->
+					newcard +=  '<div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4" style="overflow: inherit;">';
+					newcard +=   '<div class="card-header-emerald text-center text-1 p-1">'+response[j][i].name+'</div>';
+					newcard +=   '<div class="card-body text-center pt-4 pb-4">';
+					<!-- newcard +=    '<div class="col-lg-9 col-md-9 col-sm-9 ">'; -->
+					newcard +=    '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">';
+					newcard +=     '<div class="row ">';
+					newcard +=      '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">الكميه</span>';
+					newcard +=      '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 lead text-c-blue text-1 p-0 ma ">'+response[j][i].quantity+'</span>';
+					newcard +=      '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 lead text-c-darkgreen text-1 p-0 ma">'+response[j][i].unitar+'</span>';
+					newcard +=      '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">سعر الشراء</span>';
+					newcard +=      '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 lead text-c-blue text-1 p-0 ma ">'+response[j][i].unitcost+'</span>';
+					newcard +=      '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 lead text-c-darkgreen text-1 p-0 ma">ريال</span>';
+					newcard +=      '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">التكلفه</span>';
+					newcard +=      '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 lead text-c-blue text-1 p-0 ma ">'+(response[j][i].quantity*response[j][i].unitcost).toFixed(0)+'</span>';
+
+					newcard +=      '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 lead text-c-darkgreen text-1 p-0 ma">ريال</span>';
+					newcard +=      '<div class="col-lg-12 col-md-12 col-sm-12 separator-breadcrumb border-top m-2"></div>';
+					<!-- newcard +=      '<span class="col-lg-8 col-md-8 col-sm-12 text-muted text-1  mb-1 p-0 ">الاستهلاك اليومي</span>'; -->
+					newcard +=      '<span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-muted text-1  mb-1 p-0 ">الاستهلاك اليومي<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="سيتم خصم الاستهلاك اليومي من العلف عند الساعه السادسه مساء  كل يوم"></i></span>';
+					newcard +=      '<form style="width: 100%;display: flex;">';
+					newcard +=       '<input type="hidden" name="id" value="'+response[j][i].id+'">';
+					newcard +=       '<input type="hidden" name="quantity" value="'+response[j][i].quantity+'">';
+					newcard +=       '<input type="hidden" name="unitcost" value="'+response[j][i].unitcost+'">';
+					newcard +=       '<select class="ui upward fluid search dropdown intdd selection col-lg-3 col-md-3 col-sm-3 col-xs-3" name="int" ></select>';
+					newcard +=       '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-c-darkgreen text-1 p-0 ma">'+response[j][i].unitar+'</span>';
+					newcard +=       '<select class=" ui upward fluid search dropdown decdd selection col-lg-6 col-md-6 col-sm-6 col-xs-6 ml-1 " name="dec" >';
+					newcard +=        '<option value="0">0</option>';
+					newcard +=        '<option value="0.25">و ربع</option>';
+					newcard +=        '<option value="0.5">و نصف</option>';
+					newcard +=        '<option value="0.75">و 3 أرباع</option>';
+					newcard +=       '</select>';
+					newcard +=      '</form>';
+					newcard +=      '<button class="btn btn-outline-success btn-lg maxwidth mt-3 presubmit" type="button" >تحديث الإستهلاك اليومي</button>';
+					<!-- newcard +=      '<button class="btn btn-success btn-lg maxwidth mt-2 submitintake hidden" type="button" >تأكيد</button>'; -->
+					newcard +=      '<button class="btn btn-success btn-lg maxwidth mt-2 submitintake" type="button" style="display:none;" >تأكيد</button>';
+					newcard +=      '<button class="btn btn-outline-info btn-lg maxwidth mt-3 edit" type="button" >تعديل العلف</button>';
+					<!-- newcard +=      '<button class="btn btn-outline-danger btn-lg maxwidth mt-3 presubmit" type="button" >حذف العلف</button>'; -->
+					<!-- newcard +=      '<button class="btn btn-danger btn-lg maxwidth mt-2 deletefeed hidden" type="button" >تأكيد</button>'; -->
+					newcard +=     '</div>';
+					newcard +=    '</div>';
+
+					<!-- newcard +=    '<div class="col-lg-3 col-md-3 col-sm-3 ">'; -->
+					<!-- newcard +=     '<i class="i-Add-User absolute-center"></i>'; -->
+					<!-- newcard +=    '</div>'; -->
+					
+					newcard +=   '</div>';
+					newcard +=  '</div>';
+					newcard += '</div>';
+					<!-- newcard +=   '<i class="ti ti-settings" style="font-size:32px; color:#206bc4;"></i>'; -->
+					$('.mainrow').append(newcard);
+				}
+			}
+			j++;
+		}
+
+		if ( feednumbasedonquantity == 0 ) {	
+			newcard = '<p class=" text-24 maxwidth text-center mb-3">لا يوجد أعلاف</p>';
+			$('.mainrow').append(newcard);
+		}
+		if ( suppliernum > 0 ) {	
+			<!-- newcard = '<p class=" text-24 maxwidth text-center mb-3">البائعين</p>'; -->
+			<!-- $('.mainrow').append(newcard); -->
+
+			newcard = '';
+			for (var i = 0; i < response[j].length; i++) {
+				var debt = 0;	debt = response[j][i].total - response[j][i].paid;
+				// populate supplier menu
+				code = '<option value="'+response[j][i].suppliername+'">'+response[j][i].suppliername+'</option>';	
+				$('.ui.supplierdd ').append(code);
+				suppliernamearr.push(response[j][i].suppliername);		suppliermobilearr.push(response[j][i].suppliermobile); 
+				
+				newcard += '<div class="title header-emerald">';
+				newcard += '<i class="dropdown icon"></i>'+response[j][i].suppliername;
+				if ( debt > 0 ) {
+					newcard += '<span style="float: left;"><i class="fa-solid fa-sack-dollar text-1 pl-1" style="margin-top: 1px;"></i>'+response[j][i].suppliermobile+'</span>';
+				} else {
+					newcard += '<span style="float: left;">'+response[j][i].suppliermobile+'</span>';
+				}
+				<!-- newcard += '<span style="float: left;">'+response[j][i].suppliermobile+'</span>'; -->
+				newcard += '</div>';
+
+				newcard += '<div class="content">';
+				<!-- newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-1"></div>'; -->
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-3">';
+				
+				newcard += '<div class="row ">';
+				newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">رقم المعرف</span>';
+				newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-steelblue text-1  p-0 ma ">'+response[j][i].id+'</span>';
+				<!-- newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">الاسم</span>'; -->
+				<!-- newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-blue  text-1 p-0 ma ">'+response[j][i].suppliername+'</span>'; -->
+				<!-- newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">الرقم</span>'; -->
+				<!-- newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-blue  text-1 p-0 ma ">'+response[j][i].suppliermobile+'</span>'; -->
+				<!-- newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>'; -->
+				if ( response[j][i].suppliername !== '' ) {
+					newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+					newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">اسم الموزع</span>';
+					newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-blue text-1 p-0 ma ">'+response[j][i].suppliername+'</span>';
+					if ( response[j][i].suppliermobile !== '' ) {
+						newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0  ">رقمه</span>';
+						newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-blue text-1 p-0 ma "><a href="tel:'+response[j][i].suppliermobile+'" class="tel-link">'+response[j][i].suppliermobile+'</a></span>';
+					}
+				}
+
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+				newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">الاجمالي</span>';
+				newcard += '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-c-darkgreen text-1  p-0 ma ">'+response[j][i].total+'</span>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 muted text text-1  p-0 ma">ريال</span>';
+				newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">تم سداد</span>';
+				newcard += '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-c-darkgreen text-1  p-0 ma ">'+response[j][i].paid+'</span>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 muted text text-1  p-0 ma">ريال</span>';
+				newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">الدين</span>';
+				newcard += '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-c-orange  text-1  p-0 ma ">'+debt+'</span>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 muted text text-1  p-0 ma">ريال</span>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+
+				<!-- newcard +=      '<form style="width: 100%;display: flex;">'; -->
+				<!-- newcard +=       '<input type="hidden" name="id" value="'+response[j][i].id+'">'; -->
+				<!-- newcard +=      '</form>'; -->
+				newcard +=      '<button class="btn btn-outline-danger btn-lg maxwidth mt-3 presubmit" type="button" >حذف البائع</button>';
+				newcard +=      '<button class="btn btn-danger btn-lg maxwidth mt-2 deletesupplier" style="display:none;" value="'+response[j][i].id+'" type="button" >تأكيد</button>';
+
+
+				newcard += '</div>';
+				newcard += '</div>';
+				newcard += '</div>';
+			}
+			newcard = '<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" ><p class=" text-24 maxwidth text-center mb-3">البائعين</p><div class="ui styled  accordion mb-3" style="margin: auto;width: 93%;">'+newcard+'</div></div>';
+			$('.mainrow').append(newcard);
+
+			j++;
+		} else {
+			newcard = '<p class=" text-24 maxwidth text-center mb-3">لا يوجد بائعي أعلاف</p>';
+			$('.mainrow').append(newcard);
+			$('.ui.supplierdd').closest(".form-group").hide();
+		}
+		
+		if ( purchasenum > 0 ) {	
+			<!-- newcard = '<p class="text-24 maxwidth text-center mb-3">المشتريات السابقه</p>'; -->
+			<!-- $('.mainrow').append(newcard); -->
+
+			newcard = '';
+			for (var i = 0; i < response[j].length; i++) {
+				
+				newcard += '<div class="title header-emerald">';
+				newcard += '<i class="dropdown icon"></i>'+response[j][i].quantity+' '+response[j][i].unitar+' '+response[j][i].name;
+
+				if ( response[j][i].settlement !== 'full' ) {
+					newcard += '<span style="float: left;"><i class="fa-solid fa-sack-dollar text-1 pl-1" style="margin-top: 1px;"></i>'+response[j][i].time+'</span>';
+				} else {
+					newcard += '<span style="float: left;">'+response[j][i].time+'</span>';
+				}
+
+				<!-- newcard += '<span style="float: left;">'+response[j][i].time+'</span>'; -->
+				newcard += '</div>';
+
+
+				newcard += '<div class="content">';
+				<!-- newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-1"></div>'; -->
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-3">';
+				
+				newcard += '<div class="row ">';
+				newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">رقم المعرف</span>';
+				newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-steelblue text-1 p-0 ma ">'+response[j][i].id+'</span>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+				newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">الكميه</span>';
+				newcard += '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-c-darkgreen text-1  p-0 ma ">'+response[j][i].quantity+'</span>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  p-0 ma">'+response[j][i].unitar+'</span>';
+				newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">التكلفه الفرديه</span>';
+				newcard += '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-c-darkgreen text-1  p-0 ma ">'+response[j][i].unitcost+'</span>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  p-0 ma">ريال</span>';
+				newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">التكلفه الكليه</span>';
+				newcard += '<span class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-c-darkgreen text-1  p-0 ma ">'+response[j][i].totalcost+'</span>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  p-0 ma">ريال</span>';
+
+				if ( response[j][i].suppliername !== '' ) {
+					newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+					newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">اسم الموزع</span>';
+					newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-blue text-1 p-0 ma ">'+response[j][i].suppliername+'</span>';
+					if ( response[j][i].suppliermobile !== '' ) {
+						newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0  ">رقمه</span>';
+						newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-blue text-1 p-0 ma "><a href="tel:'+response[j][i].suppliermobile+'" class="tel-link">'+response[j][i].suppliermobile+'</a></span>';
+					}
+				}
+
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+				newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">حالة الدفع</span>';
+
+				if ( response[j][i].settlement == 'full' ) {
+					newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-darkgreen text-1 p-0 ma ">مدفوع بالكامل</span>';
+				}
+				if ( response[j][i].settlement == 'partial' ) {
+					newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-orange text-1 p-0 ma ">تم دفع '+response[j][i].paid+' ريال فقط</span>';
+					newcard += '<span class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-muted text-1  mb-0 p-0 ">متبقي</span>';
+					newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-orange text-1 p-0 ma ">'+(response[j][i].totalcost-response[j][i].paid)+' ريال </span>';
+				}
+				if ( response[j][i].settlement == 'debt' ) {
+					newcard += '<span class="col-lg-7 col-md-7 col-sm-7 col-xs-7 text-c-red text-1 p-0 ma ">مدين بالكامل</span>';
+				}
+				if ( response[j][i].remarks !== '' ) {
+					newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+					newcard += '<span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-muted text-1  mb-0 p-0 ">ملاحظات</span>';
+					newcard += '<span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-c-darkgreen text-1  mb-0 p-0 ">'+response[j][i].remarks+'</span>';
+				}
+				if ( response[j][i].settlement == 'partial' || response[j][i].settlement == 'debt' ) {
+					newcard += '<button class="btn btn-outline-success btn-lg m-1 mt-2 width46 paydebt "  type="button">سداد</button>';
+					<!-- newcard += '<button class="btn btn-outline-danger btn-lg mt-2 width46 m-1 delete" type="button">حذف</button>'; -->
+					newcard +=      '<button class="btn btn-outline-danger btn-lg mt-2 width46 m-1 presubmit" type="button" >حذف مشتريات</button>';
+					newcard +=      '<button class="btn btn-danger btn-lg maxwidth m-1 mt-2  deletepurchase" style="display:none;" value="'+response[j][i].id+'" type="button"  >تأكيد</button>';
+
+					
+					newcard += '<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-12 mt-3 form-group " style="display:none;">';
+					newcard +=  '<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-xs-12 p-0">';
+					newcard +=   '<div class="btn-group radius justified " role="group" aria-label="Basic example" >';
+					newcard +=    '<button class="btn pressable  btn-lg inputpadding pressable-green" type="button" name="full" checked >سداد كامل المبلغ</button>';
+					newcard +=    '<button class="btn pressable  btn-lg inputpadding pressable-green" type="button" name="partial">سداد جزئي</button>';
+					newcard +=   '</div>';
+					newcard +=  '</div>';
+					newcard +=  '<form>';
+					newcard +=   '<div class="col-md-2 form-group col-sm-3 " style="display:none;" >';
+					newcard +=    '<input type="radio" name="settlement" value="full" />';
+					newcard +=    '<input type="radio" name="settlement" value="partial" />';
+					newcard +=   '</div>';
+					newcard +=   '<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group p-0 mt-3" style="display:none;">';
+					newcard +=     '<label class="centered ">المبلغ الاضافي المدفوع</label>';
+					newcard +=     '<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0">';
+					newcard +=      '<input name="id" type="text" hidden value="'+response[j][i].id+'">';
+					newcard +=      '<input name="totalcost" type="text" hidden value="'+response[j][i].totalcost+'">';
+					newcard +=      '<input name="paid" type="text" inputmode="decimal" placeholder="" class="form-control form-primary" value="">';
+					newcard +=     '</div>';
+					newcard +=    '</div>';
+					newcard +=   '</form>';
+					newcard +=  '<button class="btn btn-info btn-lg mt-3 maxwidth submitpaydebt  " type="button">تأكيد</button>';
+					newcard += '</div>';
+
+				} else {
+					<!-- newcard += '<button class="btn btn-outline-danger btn-lg mt-2 maxwidth m-1 delete" type="button">حذف</button>'; -->
+					newcard +=      '<button class="btn btn-outline-danger btn-lg maxwidth mt-3 presubmit" type="button" >حذف مشتريات</button>';
+					newcard +=      '<button class="btn btn-danger btn-lg maxwidth mt-2 deletepurchase" style="display:none;" value="'+response[j][i].id+'" type="button" >تأكيد</button>';
+
+				}
+				newcard += '</div>';
+				newcard += '</div>';
+				newcard += '</div>';
+			}
+			<!-- newcard = '<div class="ui styled  accordion mb-3" style="margin: auto;width: 93%;">'+newcard+'</div>'; -->
+			newcard = '<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" ><p class=" text-24 maxwidth text-center mb-3">المشتريات السابقه</p><div class="ui styled  accordion mb-3" style="margin: auto;width: 93%;">'+newcard+'</div></div>';
+			$('.mainrow').append(newcard);
+
+
+			j++;
+		} else {
+			newcard = '<p class=" text-24 maxwidth text-center mb-3">لا يوجد مشتريات أعلاف</p>';
+			$('.mainrow').append(newcard);
+		}
+		
+		$(function() {
+			for (var i = 1; i <= 1000; i++) {	code = '<option value="'+i+'">'+i+'</option>';	$('.ui.quantitydd ').append(code); 		}
+			for (var i = 0; i <= 20; i++) {	code = '<option value="'+i+'">'+i+'</option>';	$('.ui.intdd').append(code); 		}
+			$('.ui.typedd').dropdown('refresh');	$('.ui.typedd').dropdown('clear');	
+				$('.ui.typedd').dropdown({   clearable: true, fullTextSearch: true });
+			$('.ui.quantitydd').dropdown('refresh');	$('.ui.quantitydd').dropdown('clear');	
+				$('.ui.quantitydd').dropdown({   clearable: true, fullTextSearch: true });
+			$('.ui.intdd').dropdown('refresh');	$('.ui.intdd').dropdown('clear');	
+				$('.ui.intdd').dropdown({   clearable: true, fullTextSearch: true });
+			$('.ui.decdd').dropdown('refresh');	$('.ui.decdd').dropdown('clear');	
+				$('.ui.decdd').dropdown({   clearable: true, fullTextSearch: true });
+
+			$('.ui.supplierdd').dropdown({	clearable: true,	direction: 'upward', fullTextSearch: true,
+				onChange: function(value, text, $choice) {			console.log('supplierdd changed');
+					var row = $( this ).closest(".row");
+					const supplierindex = $.inArray(value, suppliernamearr); // Returns 2
+					if ( supplierindex !== -1 ) {
+						row.find('input[name^="suppliername"]').val(value);
+						row.find('input[name^="suppliermobile"]').val(suppliermobilearr[supplierindex]);
+						<!-- console.log(text); -->
+					    <!-- if (typeof text === 'undefined') { -->
+							<!-- console.log('undefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefined'); -->
+						<!-- } -->
+					} else {
+						row.find('input[name^="suppliername"]').val('');
+						row.find('input[name^="suppliermobile"]').val('');
+					}
+				}
+			});
+						
+			$('.ui.accordion').accordion({			  exclusive: false			});
+			
+			// numric keyboard
+			$('.ui.quantitydd .search').attr('inputmode', 'numeric').attr('pattern', '[0-9]*');
+			$('.ui.intdd .search').attr('inputmode', 'numeric').attr('pattern', '[0-9]*');
+
+
+		});
+		
+		<!-- console.log('intarr', intarr); -->
+		<!-- console.log('decarr', decarr); -->
+		// populate dailyintake dropdown menus
+		setTimeout(  function()   {	
+			$(".intdd").each(function(index, element) {
+				<!-- $( this ).dropdown('set selected', intarr[index]); -->
+				$( this ).dropdown('set selected', String(intarr[index]));
+			});
+			$(".decdd").each(function(index, element) {
+				$( this ).dropdown('set selected', String(decarr[index]));
+			});
+		}, 250);	
+	}
+	
+	
+	let calculationsscript = document.createElement('script');
+	calculationsscript.async = false;
+	calculationsscript.defer = false;
+	document.head.appendChild(calculationsscript);
+	calculationsscript.onload = function(){
+		<!-- if ( notnum > 0 ) { -->
+			<!-- notdata = response[0];	populatenotifications(); -->
+		<!-- } else { -->
+			<!-- $('.notification-badge').html(''); -->
+		<!-- }	 -->
+	}
+	calculationsscript.src = 'js/scripts/tooltip.script.min.js';
+
+});	
+
+
+	$(document).on("click", ".presubmit", function(){
+		// Hide pay debt form
+		if ( $(this).siblings().last().is(":visible") && !$(this).siblings().last().is(":button") ) { 
+			$(this).siblings().last().slideUp(250);
+		}
+		// Adjust button width 
+		if ( $(this).hasClass("width46") ) {
+			$(this).next().removeClass('maxwidth');
+			$(this).next().addClass('width46');
+		}
+		$(this).slideUp();
+		$(this).next().delay(500).slideDown(250);
+	});
+
+	$(document).on("click", ".submitintake", function(){
+		console.log("submitintake");
+		var submitbtn = $(this);
+		var form = $(this).closest(".row").find("form");
+		var formData = $(form).serialize();
+		formData = formData + "&key=intake"; 		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/feed.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css({  "background-color": "#a7a4a4",   "border-color": "#fff" });
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css({  "background-color": "",   "border-color": "" });
+			}		
+		})		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;		showalert(status,statusmessage);		
+		});
+	});
+
+	$(document).on("click", ".deletesupplier", function(){
+		var process = 'deletesupplier';
+		var submitbtn = $(this);
+		console.log($(this).val());
+		console.log("deletesupplier");
+		var content = $(this).closest(".content");
+		formData = "id="+$(this).val()+"&key=" + process; 		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/feed.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css({  "background-color": "#a7a4a4",   "border-color": "#fff" });
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css({  "background-color": "",   "border-color": "" });
+			}		
+		})		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;		showalert(status,statusmessage);	
+			if ( status == 'success' ) {	
+				if ( process == 'deletesupplier' ) {	
+					content.prev().remove();		content.remove();
+				}
+			}
+		});
+	});
+	
+	$(document).on("click", ".deletepurchase", function(){
+		var process = 'deletepurchase';
+		var submitbtn = $(this);
+		console.log($(this).val());
+		console.log("deletepurchase");
+		var content = $(this).closest(".content");
+		formData = "id="+$(this).val()+"&key=" + process; 		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/feed.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css({  "background-color": "#a7a4a4",   "border-color": "#fff" });
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css({  "background-color": "",   "border-color": "" });
+			}		
+		})
+		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;	
+			if ( status == 'success' ) {
+				localStorage.setItem('status', status);			localStorage.setItem('statusmessage', statusmessage);			
+				if ( process == 'deletepurchase' ) {	
+					content.prev().remove();		content.remove();	
+					location.reload();
+				}
+			} else {
+				showalert(status,statusmessage);
+			}
+		});
+	});
+	
+	var mrahid;
+	
+	$(document).on("click", ".Addfeed", function(){		//console.log("Addfeed clicked");
+		process = 'add';		
+		$('.Addfeedmodal').modal('show');
+		$('.Addfeedmodal').find('h4').html('إضافة أعلاف');		
+		$('.Addfeedmodal').find('form').trigger("reset");		
+		$('.Addfeedmodal').find('.dropdown').dropdown('clear');
+		$('.Addfeedmodal').find('.submitdiv').find('button').hide();					$('.Addfeedmodal').find('button').last().show();
+	});
+	
+	$(document).on("click", ".Addsupplier", function(){		//console.log("addsupplier clicked");
+		process = 'addsupplier';		
+		$('.Addsuppliermodal').modal('show');
+		$('.Addsuppliermodal').find('h4').html('إضافة بائع');		
+		$('.Addsuppliermodal').find('form').trigger("reset");		
+		$('.Addsuppliermodal').find('.submitdiv').find('button').hide();					$('.Addsuppliermodal').find('button').last().show();
+	});
+		
+	$(document).on("click", ".edit", function(){
+		console.log("edit feed");
+		var form = $(this).closest(".row").find("form");
+
+		<!-- $('.replacecb').show();					// show checkbox of updating categories of all existsting products -->
+		console.log("Editing");
+		process = 'edit';
+		
+		$('.Editmodal').find('input[name^="id"]').val(form.find('input[name^="id"]').val())
+		$('.Editmodal').find('input[name^="quantity"]').val(form.find('input[name^="quantity"]').val())
+		$('.Editmodal').find('input[name^="unitcost"]').val(form.find('input[name^="unitcost"]').val())
+		$('.Editmodal').modal('show');
+		
+		$('.Editmodal').find('h4').html('تعديل علف');		
+						
+		// hide add button and show update button
+		$('.Editmodal').find('.submitdiv').find('button').hide();		
+		$('.Editmodal').find('.submitdiv').find('button').first().show();
+	});
+	
+	$(document).on("click", ".submit", function(){
+		console.log("SUBMITTING");
+		console.log("mrahid");	console.log(mrahid);
+		var submitbtn = $(this);
+		var form = $(this).closest("form");
+		var formData = $(form).serialize();
+		// add category id to editing process
+		formData = formData + "&key="+process; 
+		<!-- if ( process == 'edit' ) {	 -->
+			<!-- formData = formData + "&id="+mrahid;  -->
+		<!-- } -->
+		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/feed.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css('color', '#aeafae');
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css('color', 'green');
+			}		
+		})
+		.done(function(response) {
+		
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;
+			if ( status == 'success' ) {
+				localStorage.setItem('status', status);			localStorage.setItem('statusmessage', statusmessage);			
+				var mrahname = $('input[name^="mrahname"]').val();
+				console.log('mrahname');	console.log(mrahname);
+				
+				if ( process == 'add' ) {
+					setTimeout(function() {    $('.Addfeedmodal').modal('hide');	form.trigger("reset");		}, 500);
+					location.reload();
+				}			
+				if ( process == 'addsupplier' ) {
+					setTimeout(function() {    $('.Addsuppliermodal').modal('hide');	form.trigger("reset");		}, 500);
+					location.reload();
+				}
+				if ( process == 'edit' ) {
+					setTimeout(function() {    $('.Editmodal').modal('hide');	form.trigger("reset");		}, 500);
+					location.reload();
+				}			
+			} else {
+				showalert(status,statusmessage);
+			}		
+		});
+	});
+	
+	$(document).on("click", ".submitedit", function(){
+		console.log("SUBMITTING submitedit");
+		var submitbtn = $(this);
+
+		var form = $(this).closest("form");
+		var formData = $(form).serialize();
+		// add category id to editing process
+		formData = formData + "&key="+process; 		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/feed.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css('color', '#aeafae');
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css('color', 'green');
+			}		
+		})
+		.done(function(response) {
+		
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;		showalert(status,statusmessage);		
+			if ( status == 'success' ) {
+				setTimeout(function() {    $('.Editmodal').modal('hide');	form.trigger("reset");		}, 500);
+				setTimeout(function() {    location.reload();		}, 2000);
+			}
+		
+		});
+	});
+	
+	$(document).on("click", ".paydebt", function(){		$(this).siblings().last().show();	});
+
+	$(document).on("click", ".submitpaydebt", function(){
+		process = 'editpurchase';
+		var submitbtn = $(this);
+
+		var form = $(this).prev();
+		var formData = $(form).serialize();
+		formData = formData + "&key="+process; 
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/feed.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css({  "background-color": "#a7a4a4",   "border-color": "#fff" });
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css({  "background-color": "",   "border-color": "" });
+			}		
+		})
+		.done(function(response) {
+		
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;
+			if ( status == 'success' ) {
+				localStorage.setItem('status', status);			localStorage.setItem('statusmessage', statusmessage);			
+				location.reload();
+			} else {
+				showalert(status,statusmessage);
+			}
+		
+		});
+
+	});
+
+ 	if (localStorage.getItem('status') !== null && localStorage.getItem('statusmessage') !== null) {		
+		showalert(localStorage.getItem('status'),localStorage.getItem('statusmessage'));
+		localStorage.removeItem('status');	localStorage.removeItem('statusmessage');	
+	}
+});
+		
+	$(document).on("click", ".cleardd", function(){	console.log('cleardd');
+		 if ( $(this).parent().next().hasClass('ui') ) {
+			$(this).parent().next().dropdown('clear');
+		 } else {	
+			$(this).parent().next().find("input").val('');
+		 }
+	});
+	
+	$(document).on("click", ".close", function(){
+		$(this).closest(".modal").modal('hide');
+	});
+
+	$(document).on("click", ".closealert", function(){	//console.log('closealert');
+		$(this).closest(".alert-card").remove();
+	});
+
+	$(document).on("click", ".pressable", function(){
+
+		btngroup = $(this).closest('.btn-group');			
+		formgroup = $(this).closest('.form-group');			
+		vatstatus = $(this).attr('name');
+		if ( $(this).hasClass('pressed') ) {	
+			$(this).removeClass('pressed');
+			formgroup.find(":radio").prop("checked", false);
+			formgroup.find("input[name='paid']").closest(".form-group").hide(400);
+		} else {
+			// Bill Buttons
+			if ( vatstatus == 'full' || vatstatus == 'partial' || vatstatus == 'debt'  ) { 	
+				// set hidden radio buttons for vatability
+				formgroup.find(":radio[value="+vatstatus+"]").prop("checked", true);		
+			} 
+
+				btngroup.find('button').removeClass('pressed');	
+				$(this).addClass('pressed'); 
+
+			// recolor vatability buttons
+			if ( formgroup.find(":radio[value=full]").is(':checked') && vatstatus == 'full' ) {		
+				formgroup.find("input[name='paid']").val('');
+				formgroup.find("input[name='paid']").closest(".form-group").hide(400);
+				<!-- $('input[name^="paid"]').val(''); -->
+				<!-- $('input[name^="paid"]').closest(".form-group").hide(400);  -->
+			}
+			// recolor vatability buttons
+			if ( formgroup.find(":radio[value=partial]").is(':checked') && vatstatus == 'partial' ) {		
+				<!-- $('input[name^="paid"]').closest(".form-group").toggle(400);  -->
+				formgroup.find("input[name='paid']").closest(".form-group").toggle(400); 
+			}
+				// recolor vatability buttons
+			if ( formgroup.find(":radio[value=debt]").is(':checked') && vatstatus == 'debt' ) {		
+				formgroup.find("input[name='paid']").val('');
+				formgroup.find("input[name='paid']").closest(".form-group").hide(400);
+			}
+		}
+	});
+	
+	<!-- $('input[name^="unitcost"]').on("keyup",function(){ 	//console.log('unitcost key up'); -->
+		<!-- var row = $(this).closest(".row"); -->
+		<!-- var unitcost = row.find("input[name='unitcost']"); -->
+		<!-- var totalcost = row.find("input[name='totalcost']"); -->
+		<!-- var quantityval = row.find(".ui.quantitydd").find(":selected").val();	 -->
+		<!-- if( quantityval ) {	totalcost.val(unitcost.val()*quantityval);	}	 -->
+	<!-- }); -->
+	$('input[name^="unitcost"]').on("keyup", function () {
+		var row = $(this).closest(".row");
+		var unitcost = parseFloat(row.find("input[name='unitcost']").val()) || 0;
+		var quantityval = parseFloat(row.find(".ui.quantitydd").find(":selected").val()) || 0;
+		var totalcost = row.find("input[name='totalcost']");
+		if (quantityval) {
+			totalcost.val((unitcost * quantityval).toFixed(2));
+		} else {
+			totalcost.val('');
+		}
+	});
+
+	
+	<!-- $('input[name^="totalcost"]').on("keyup",function(){ 	//console.log('totalcost key up'); -->
+		<!-- var row = $(this).closest(".row"); -->
+		<!-- var unitcost = row.find("input[name='unitcost']"); -->
+		<!-- var totalcost = row.find("input[name='totalcost']"); -->
+		<!-- var quantityval = row.find(".ui.quantitydd").find(":selected").val();	 -->
+		<!-- if( quantityval ) {	unitcost.val(totalcost.val()/quantityval);	}	 -->
+	<!-- }); -->
+	
+	$('input[name^="totalcost"]').on("keyup", function () {
+		var row = $(this).closest(".row");
+		var totalcost = parseFloat(row.find("input[name='totalcost']").val()) || 0;
+		var quantityval = parseFloat(row.find(".ui.quantitydd").find(":selected").val()) || 0;
+		var unitcost = row.find("input[name='unitcost']");
+		if (quantityval) {
+			unitcost.val((totalcost / quantityval).toFixed(2));
+		} else {
+			unitcost.val('');
+		}
+	});
+
+
+</script>
+
+<ul class="nav nav-tabs fixed-bottom nav-justified" style="background: white;-top: 1px solid #6d6d71;border-radius: 5px;margin: 1px;border: 1px solid #6d6d71;padding-right: 0;">
+   <li class="nav-item  pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="index.html">
+	<i class="fa fa-home text-125"></i><br>الرئيسية</a>
+  </li>
+   <li class="nav-item pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="stats.html">
+	<i class="fa fa-signal text-125"></i><br>بيانات</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="sheep.html">
+	<i class="fa fa-tasks text-125"></i><br>إدارة</a>
+  </li>
+  <li class="nav-item active pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="feed.html">
+	<i class="fa fa-cubes text-125"></i><br>أعلاف</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="water.html">
+	<i class="fa fa-tint text-125"></i><br>مياه</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="others.html">
+	<i class="fa fa-syringe text-125"></i><br>اخرى</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="spending.html">
+	<i class="fa fa-coins text-125"></i><br>مصاريف</a>
+  </li>
+</ul>
+
+</body>
+
+</html>

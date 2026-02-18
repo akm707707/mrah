@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>مراح نك</title>
+	<link rel="icon" type="image/png" href="imgs/icons/favicon.ico">
+	<link rel="apple-touch-icon" href="imgs/icons/apple-touch-icon.png">
+	<link href="css/themes/lite-purple.min.css" rel="stylesheet">
+	<link href="css/extra/animatioin.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/plugins/sweetalert2.min.js"></script>
+	<script src="js/scripts/sweetalert.script.min.js"></script>
+	<script src="js/plugins/allfontawesome7.js"></script>
+<script>
+<!-- var mobile; -->
+<!-- var trimmedmobile; -->
+var start = new Date().getTime();
+ $.ajax({	
+	type: 'POST',	
+	url    : "php/verify.php",
+ })
+ .done(function(response) {												//console.log(response); 
+ var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+	if ( response.id === 'success' ) {					console.log("sucess");		//console.log(response.data.mobile);
+		<!-- trimmedmobile = response.data.mobile; -->
+	} else {
+		console.log("not sucess");
+	}
+  });
+</script>
+</head>
+<style>
+ #forget, #signin {  cursor: pointer;	}
+input { 
+  	-webkit-align-self: center !important;	
+ }
+ 
+ /* fix elevated text in ios browsers */  
+@supports (-webkit-touch-callout: none) {
+	input:not([type="password"]) {
+		padding-top: 14px !important;
+		/* color: red !important; */
+	}
+	button {
+		padding-bottom: 0px !important;
+		padding-top: 5px !important;
+	}
+}
+</style>
+<div class="auth-layout-wrap" style="background-image: url(imgs/bg.jpg)">
+    <div class="auth-content">
+        <div class="card o-hidden">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="p-4">
+                        <div class="auth-logo text-center mb-4"><img src="imgs/logo.png" alt=""></div>
+						<div class="swal2-icon swal2-success swal2-animate-success-icon " style="display: none;">
+							<div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
+							<span class="swal2-success-line-tip"></span>
+							<span class="swal2-success-line-long"></span>
+							<div class="swal2-success-ring"></div> 
+							<div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
+							<div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+						</div>
+						<div class="swal2-icon swal2-error swal2-animate-error-icon " style="display: none;">
+							<span class="x-mark animate-x-mark">
+								<span class="line left"></span>
+								<span class="line right"></span>
+							</span>
+						</div>                        
+						<form id="login" style="display: none">
+                            <div class="form-group c" >											<!-- mobile input -->
+                                <label class="m" for="mobile">رقم الجوال</label>
+                                <!-- <input class="form-control m form-control-rounded c" id="mobile" name="mobile" type="text" value="0558520333" maxlength="20"> -->
+                                <input class="form-control m form-control-rounded c" id="mobile" name="mobile" type="text" placeholder="0500000000" maxlength="10">
+                            </div>
+							<div class="col-md-12" style="display: none;">						<!-- spinner -->
+								<div class=" mb-4">
+									<div class="" <div class="" style="display: flex;justify-content: center;align-items: center;">
+										<div class="spinner spinner-success "></div>
+									</div>
+								</div>
+							</div>
+                            <div class="form-group c" style="display: none;" dir="ltr">			<!-- Verification inputs -->
+                                <label class="m" style="width:100%;">رمز التفعيل</label>
+								<input class="form-control m form-control-rounded c newcode V1" id="V1" type="tel" maxlength="6" value="" autocomplete="one-time-code" style="letter-spacing: 10px; ">
+								<!-- <input class="form-control m c code V1" id="V1" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V2" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V3" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V4" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V5" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V6" type="tel" maxlength="1" value=""> -->
+                            </div>
+                        </form>
+						<div id="signInButtons">
+							<div class="row c" style="" dir="">			<!-- Verification inputs -->
+								<button id="apple-btn" class="btn btn-dark btn-icon ma mb-2 mt-2" type="button" style="background-color: #000; display:none;">
+									<span class="ul-btn__text">تسجيل الدخول</span>
+									<i class="fa-brands fa-apple"></i>
+								</button>
+							</div>
+							<div class="row c" style="" dir="">			
+								<button id="google-btn" class="btn btn-dark btn-icon ma mb-2" type="button" style="background-color: #fff;color: #000; display:none;">
+									<span class="ul-btn__text">تسجيل الدخول</span>
+									<img src="imgs/google.png" alt="" style="width: 24px;">
+								</button>
+							</div>
+						</div>
+						<!-- <div id="status">Ready. Click a button to test sign-in.</div> -->
+						<div class="row c" style="" dir="">			<!-- Verification inputs -->
+							<button id="logout-btn" class="btn btn-rounded btn-danger btn-block mt-2" style="display: none;" >تسجيل الخروج</button>
+							<div id="recaptcha-container"></div>  <!-- Remove style="display:none;" -->
+						</div>
+						<div class="row c" style="" dir="">			<!-- Verification inputs -->
+							<button id="test-btn" class="btn btn-rounded btn-success btn-block ma mb-2 mt-2" style="width: 63%;" >حساب تجريبي</button> 
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <!-- <div id="phone-section" style="display:none;"> -->
+    <!-- <input type="tel" id="phone-number" value="+966558520333" /> -->
+    <!-- <button id="send-code-btn">Send Verification Code</button> -->
+  <!-- </div> -->
+  <!-- <div id="verification-section" style="display:none;"> -->
+    <!-- <input type="text" id="verification-code" placeholder="Enter 6-digit code" maxlength="6" /> -->
+    <!-- <button id="verify-code-btn">Verify Code</button> -->
+    <!-- <button onclick="document.getElementById('phone-section').style.display='block'; document.getElementById('verification-section').style.display='none';">Back</button> -->
+  <!-- </div> -->
+  <!-- <div id="logged-in-section" style="display:none;"> -->
+    <!-- <p><strong>Welcome!</strong></p> -->
+    <!-- <p id="user-phone">Logged in as: <strong>Loading...</strong></p> -->
+  <!-- </div> -->
+  <!-- <div id="status" style="display:none;"></div> -->
+
+<div class="scripts">
+	<!-- for mobile -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script> -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script> -->
+  <!-- Firebase SDKs via CDN - Latest compat version (January 2026) -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-app-compat.js"></script> -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-auth-compat.js"></script> -->
+<!-- Firebase SDKs via CDN -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="js/calculations.js"></script>
+</div>
+
+
+  <script>
+
+    // Your Firebase config for mrah-35885
+    const firebaseConfig = {
+      apiKey: "AIzaSyDZ05k_0OFdlk2IISeh08GoBBlXAKnvE_s",
+      authDomain: "mrah-35885.firebaseapp.com",
+      databaseURL: "https://mrah-35885-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "mrah-35885",
+      storageBucket: "mrah-35885.appspot.com",
+      messagingSenderId: "436123048692",
+      appId: "1:436123048692:web:fa19e9386a001dfccfdca1",
+      measurementId: "G-6V5ZQB7JEM"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+	auth.useDeviceLanguage();
+    // Providers
+    const googleProvider = new firebase.auth.GoogleAuthProvider();
+    const appleProvider = new firebase.auth.OAuthProvider('apple.com');
+
+    // Elements
+    <!-- const statusDiv = document.getElementById('status'); -->
+    const signInButtons = document.getElementById('signInButtons');
+    const signOutBtn = document.getElementById('logout-btn');
+    const googleBtn = document.getElementById('google-btn');
+    const appleBtn = document.getElementById('apple-btn');
+
+    // Helper to update status
+    <!-- function setStatus(message, isError = false) { -->
+      <!-- statusDiv.textContent = message; -->
+      <!-- statusDiv.className = isError ? 'error' : 'success'; -->
+    <!-- } -->
+
+    // Update UI based on auth state
+    function updateUI(user) {
+	
+      if (user) { 
+        <!-- signInButtons.classList.add('hidden'); -->
+        <!-- signOutBtn.classList.remove('hidden'); -->
+		$(".swal2-success").delay(500).fadeIn(250);											// show success animation
+		<!-- $(".swal2-success").delay(5000).fadeOut(250);										// hide success animation -->
+		$("#logout-btn").slideDown(250);													// show signout button
+		$("#apple-btn").slideUp(250);														// hide Apple Button
+		$("#google-btn").slideUp(250);														// hide Google Button
+
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',	
+			url    : "php/login.php",
+			data: ({email: user.email, name: user.displayName}),
+		})
+		.done(function(response) {												//console.log(response); 
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			if ( response.id === 'success' ) {					
+				console.log("sucess");
+			} else {
+				console.log("not sucess");
+			}
+			console.log(response.alert);
+			
+			if ( response.alert === 'User Exists' ) {	console.log("User Exists");
+				setTimeout(() => {
+				  window.location.replace("index.html");
+				}, 2000); 
+			}
+			if ( response.alert === 'User Exists with 1 mrah' ) {	console.log("User Exists");
+				setTimeout(() => {
+				  window.location.replace("stats.html");
+				}, 2000); 
+			}
+			if ( response.alert === 'New User' ) {		console.log("New User");
+				setTimeout(() => {
+				  window.location.replace("setting.html");
+				}, 2000); 
+			}
+		});
+
+        <!-- setStatus(`Signed in as: ${user.displayName || user.email}`); -->
+      } else {
+        <!-- signInButtons.classList.remove('hidden'); -->
+        <!-- signOutBtn.classList.add('hidden'); -->
+		$("#logout-btn").slideUp(250);	 														// hide signout button
+		$("#apple-btn").slideDown(250);													// show Apple Button
+		$("#google-btn").slideDown(250);													// show Google Button
+
+        <!-- setStatus('Signed out. Ready to sign in.'); -->
+      }
+    }
+
+	// Error handler using your showalert
+	function handleAuthError(error, providerName) {
+      console.error(`${providerName} Error:`, error);
+
+      let errorMsg = `فشل ${providerName} في تسجيل الدخول\n`;
+      errorMsg += `رمز الخطأ: ${error.code || 'غير معروف'}\n`;
+      errorMsg += `الرسالة: ${error.message || 'لا توجد تفاصيل'}`;
+
+      if (error.code === 'auth/popup-blocked') {
+        errorMsg += '\n\nنصيحة: تم حظر النوافذ المنبثقة. يرجى السماح بالنوافذ المنبثقة لـ mrah.sa في إعدادات Safari.';
+      } else if (error.code === 'auth/popup-closed-by-user') {
+        errorMsg += '\n\nلقد أغلقت نافذة تسجيل الدخول.';
+      } else if (error.code === 'auth/network-request-failed') {
+        errorMsg += '\n\nخطأ في الشبكة. تحقق من اتصالك بالإنترنت.';
+      }
+
+      showalert('danger', errorMsg);
+    }
+    // Google Sign-In
+    googleBtn.addEventListener('click', () => {
+      <!-- setStatus('Signing in with Google...'); -->
+      auth.signInWithPopup(googleProvider)
+        .then((result) => {
+          updateUI(result.user);
+        })
+        .catch((error) => {
+          <!-- setStatus(`Google Error: ${error.message}`, true); -->
+          console.error(error);
+        });
+    });
+
+    // Apple Sign-In
+    appleBtn.addEventListener('click', () => {
+      <!-- setStatus('Signing in with Apple...'); -->
+      auth.signInWithPopup(appleProvider)
+        .then((result) => {
+          updateUI(result.user);
+        })
+        .catch((error) => {
+          <!-- setStatus(`Apple Error: ${error.message}`, true); -->
+          console.error(error);
+        });
+    });
+
+    // Sign Out
+    signOutBtn.addEventListener('click', () => {
+      <!-- setStatus('Signing out...'); -->
+      auth.signOut()
+        .then(() => {
+          updateUI(null);
+        })
+        .catch((error) => {
+          <!-- setStatus(`Sign out error: ${error.message}`, true); -->
+        });
+    });
+
+    // Listen for auth state changes (e.g., page reload)
+    auth.onAuthStateChanged((user) => {
+      updateUI(user);
+    });
+
+
+
+  </script>

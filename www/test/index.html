@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>مراح</title>
+	<link rel="icon" type="image/png" href="imgs/icons/favicon.ico">
+	<link rel="apple-touch-icon" href="imgs/icons/apple-touch-icon.png">
+    <link href="css/themes/lite-purple.min.css" rel="stylesheet">
+    <link href="css/extra/animatioin.css" rel="stylesheet">
+    <link href="css/extra/iosfix.css" rel="stylesheet">
+    <link href="css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/plugins/dropzone.min.css" />
+	<link href="css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/plugins/cropper.min.css" />
+    <link rel="stylesheet" href="css/plugins/animate.css" />
+    <!-- <link rel="stylesheet" href="../dist-assets/css/plugins/datepicker/bootstrap-datepicker.css" /> -->
+    <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker3.min.css" />
+	<script src="js/plugins/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/plugins/Semantic/semantic.rtl.min.css">
+	<script src="js/scripts/customizer.script.min.js"></script>
+	<!-- <link rel="stylesheet" href="css/tabler/tabler-icons.min.css"> -->
+	<!-- <link rel="stylesheet" href="css/tabular/tabler-icons.ttf"> -->
+	<!-- <link rel="stylesheet" href="css/tabular/tabler-icons.woff"> -->
+	<!-- <link rel="stylesheet" href="css/tabular/tabler-icons.woff2"> -->
+
+<script>
+// For verify php
+var username;
+var identifier;
+var notdata;
+const leadzero = (num, places) => String(num).padStart(places, '0')				//userdataid = leadzero(identifier, 4)
+
+// verify login credintials and retreive Bussniess data
+var start = new Date().getTime();
+ $.ajax({	
+	type: 'POST',	
+	url    : "php/verify.php",
+ })
+ .done(function(response) {												//console.log(response); 
+ var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+
+	if ( response.id == 'success' ) {		
+	
+		userid = response.data.userid;
+		name = response.data.name;
+		mobile = response.data.mobile;
+		email = response.data.email;
+		//pass = response.data.pass;
+		mrah = response.data.mrah;
+		time = response.data.time;
+		
+		$( ".title" ).find("h1").html(name);
+		
+		if (mrah) {
+			for (i=0;i<mrah.length;++i) {
+				newcard = '';
+				newcard +=   '<div class="col-sm-12 col-md-4 col-lg-3 mb-3">';
+				newcard +=     '<div class="card">';
+				newcard +=      '<div class="card-body">';
+				newcard +=       '<div class="ul-widget__content-v4 card-icon-bg mrahselector">';
+				newcard +=        '<i class="fa fa-warehouse text-success mb-1 text-4"></i>';
+				<!-- newcard +=        '<i class="i-Atom text-success mb-1"></i>'; -->
+				<!-- newcard +=        '<i class="ti ti-user thinnest text-success mb-1 text-5 "></i>'; -->
+				newcard +=        '<h3 class="t-font-boldest mt-2">'+mrah[i].mname+'</h3>';
+				newcard +=        '<form><input type="text" name="mrahid" id="mrahid" value="'+mrah[i].mid+'"hidden></form>';
+				newcard +=       '</div>';
+				newcard +=       '<i class="text-20 i-Arrow-Down-2 card-down-arrow"></i>';
+				newcard +=       '<div style="display: none;text-align: center;" class="card-setting ">';
+				newcard +=        '<i class="fa fa-pen text-info mb-1 mt-4 edit" style="width: 50%;font-size: 1rem;"></i>';
+				newcard +=        '<i class="fa fa-trash text-danger mb-1 mt-4 delete" style="width:50%;font-size: 1rem;"></i>';
+				newcard +=      '</div>';
+				newcard +=      '</div>';
+				newcard +=     '</div>';
+				newcard +=   '</div>';
+				<!-- newcard +=   '<i class="ti ti-settings" style="font-size:32px; color:#206bc4;"></i>'; -->
+				$('.mrahrow').prepend(newcard);
+			}
+		} 
+	} else {
+		console.log("not sucess");
+		window.location.replace("login.html");
+		<!-- setTimeout(function() {    window.location.replace("login.html");	}, 10000); -->
+
+	}
+  });
+</script>
+
+</head>
+
+<style>
+
+</style>
+
+
+<body class="text-left">
+    <div class="app-admin-wrap layout-sidebar-compact clearfix">
+        <div class="main-content-wrap d-flex flex-column">
+            <div class="main-header">
+                <div class="logo" style="display:block;">
+					<img id="logo" src="imgs/logo_out.jpg" >
+                </div>
+                <div class="title mobilehide" style="margin-right: 9vw;">
+					<h1></h1>
+                </div>
+                <!-- <div class="menu-toggle" style="display:none;"><div></div><div></div><div></div></div> -->
+                
+                <div style="margin: auto; display:none;"></div>
+                <div class="header-part-right">
+                    <!-- Full screen toggle -->
+                    <!-- <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i> -->
+					<!-- Notificaiton -->
+                    <div class="dropdown pl-3" style="margin-bottom:-6px">
+                        <div class="badge-top-container" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- <span class="badge badge-primary">3</span> -->
+                            <!-- <i class="i-Bell text-muted header-icon"  -->
+							<i class="fa-regular fa-bell" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                        </div>
+					</div>
+                    <!-- Customizer Dropdown -->
+                    <!-- <i class="i-Gear header-icon  d-sm-inline-block callcustomizer" ></i> -->
+					<a href="finance.html" target="">
+						<img src="imgs/sar.svg"  alt="Description of the image" width="22" height="22" class="filter-grey"/>
+					</a>
+					<a href="setting.html" target="" >
+						<i class="fa-solid fa-gear pr-3" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;margin-top: 5px;"></i>
+					</a>					
+                    <!-- sign out -->
+					<i class="fa-solid fa-power-off header-icon pr-2 signout" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                    <!-- Notificaiton End -->
+                    <!-- User avatar dropdown -->
+                    <!-- <div class="dropdown"> -->
+                        <!-- <div class="user col align-self-end "> -->
+                            <!-- <img src="" id="avatar" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                            <!-- <div class="dropdown-menu dropdown-menu-left" aria-labelledby="avatar"> -->
+                                <!-- <div class="dropdown-header"> -->
+                                    <!-- <i class="mr-1 empname"></i>   -->
+                                <!-- </div> -->
+                                <!-- <a class="dropdown-item signout" >خروج</a> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+            </div><!-- ============ Body content start ============= -->
+            <div class="main-content">
+                <div class="breadcrumb mb-0">
+					<div class="row pb-3" style="width: 100%;">
+						<h4 class="mr-2 mrahtitle col-lg-11 col-md-10 col-sm-8 col-xs-8 ml-0 pl-0 " style="padding-right: 15px !important;padding-top: 0.35rem !important;">الصفحة  الرئيسية</h4>
+						<h4 class="mr-2 col-lg-11 col-md-10 col-sm-8 col-xs-8 ml-0 pl-0 text-muted " style="padding-right: 15px !important;position: absolute;padding-top: 32px;">إدارة المراح</h4>
+						<!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl-0 " ></div> -->
+						<div class="dropdown col-lg-1 col-md-2 col-sm-4 col-xs-4 pl-0 " >
+						  <button class="btn btn-outline-emerald btn-lg  dropdown-toggle maxwidth" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">إضافه</button>
+						  <div class="dropdown-menu text-1" >
+							<a class="dropdown-item emerald Add" >مراح</a>
+						  </div>
+						</div>
+					</div>
+                </div>
+
+                <!-- <div class="breadcrumb"> -->
+					<!-- <div class="dropdown col-lg-1 col-md-2 col-sm-4 col-xs-4 pl-0 " > -->
+					  <!-- <button class="btn btn-outline-info btn-lg  dropdown-toggle maxwidth" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">إضافه</button> -->
+					  <!-- <div class="dropdown-menu text-1" > -->
+						<!-- <a class="dropdown-item info Add" >إضافة  مراح</a> -->
+					  <!-- </div> -->
+					<!-- </div> -->
+                <!-- </div> -->
+                <div class="separator-breadcrumb border-top"></div>
+                <div class="row mrahrow">
+					<!-- <div class="col-sm-12 col-md-4 col-lg-3 mb-3 Add"> -->
+							<!-- <div class="card"> -->
+							  <!-- <div class="card-body"> -->
+								   <!-- <div class="ul-widget__content-v4 card-icon-bg"> -->
+									  <!-- <i class="i-Add text-success mb-1"></i> -->
+									  <!-- <h3 class="t-font-boldest mt-2">إضافة مراح</h3> -->
+								   <!-- </div> -->
+								<!-- </div> -->
+							<!-- </div> -->
+					<!-- </div> -->
+					<div class="col-sm-12 col-md-4 col-lg-3 mb-3">
+						<a href="logs.html" style="color: inherit;">
+							<div class="card">
+							  <div class="card-body">
+								   <div class="ul-widget__content-v4 card-icon-bg">
+									  <i class="fas fa-th-list text-success mb-1 text-4"></i>
+									  <h3 class="t-font-boldest mt-2">سجل العمليات</h3>
+									  <!-- <span>إضافة مراح</span> -->
+								   </div>
+								</div>
+							</div>
+						</a>	
+					</div>
+										
+					
+					
+					
+				</div>
+            </div>
+        </div>
+    </div><!-- ============ Search UI Start ============= -->
+    <!-- ============ ADD SUPPLIER MODAL ============= -->
+	<div class="modal fade Addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered ">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-emerald m">
+								<h4 class="marginless" style=""></h4>
+							</div>
+                            <div class="card-body">
+                                <form>
+									<div class="row">
+										<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group text-125 c">
+											<label>اسم المراح</label>
+											<!-- <div role="group" class="input-group col-xs-12 col-sm-12	col-md-12 p-0"> -->
+											<div role="group" class="col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input name="mrahname" type="text"  placeholder="" class="form-control form-success text-125 centered" value="">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 centered submitdiv" style="" >
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="display:none;font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-redo-alt" style="font-size: 30px;"></i></span></button>
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-plus" style="font-size: 30px;"></i></span></button>
+										</div>	
+									</div>
+                                	<!-- <input class="form-control form-primary" name="key"	value=""  hidden /> -->
+								</form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade Delmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered ">
+            <div class="modal-content">
+				<div class="modalrow ">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-emerald m"><h4 class="marginless"style="">حذف مراح</h4></div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row text-125">
+										<h5 class="centered mb-4 text-125">يرجى التأكيد</h5>
+                                        <div class="col-md-12 centered">
+											<a class="btn btn-danger btn-lg text-white btn-rounded deleteitem" style="">حذف</a>
+                                        </div>
+                                    </div>
+									<div class="body alert-card alert-danger temp text-1" role="alert" style="position: relative;text-align: justify;border-radius: 10px;padding: 0.75rem 1.25rem;"><button class="closealert" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><strong class="text-capitalize">تحذير ! </strong>
+									بحذف المراح سيتم حذف جميع المعلومات المتعلقه بالمراح من أغنام وأعلاف ومياه وبائعين ومشتريات ومصروفات									
+									</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade columntoggle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered ">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header m"><h4 class="marginless"style="">إظهار وإخفاء الأعمده</h4></div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row checkboxes">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <form>
+								    <div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 mb-1 centered hideshow"><label class="checkbox checkbox-outline-primary" ><input class="global" name="select" type="checkbox" checked ><span>تحديد الكل</span><span class="checkmark"></span></label></div>									
+									</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- ============ LOADER MODAL ============= -->
+    <div class="modal fade loader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered " style="width: fit-content;  max-width: 700px;	margin: 1.75rem auto;">
+			<div class="spinner-bubble spinner-bubble-primary m-5"></div>
+		</div>
+    </div>
+	<!-- ============ Search UI End ============= -->
+    <div class="customizer" style="display:none;" >
+        <div class="handle" style="display:none;"><i class="i-Gear spin"></i></div>
+        <div class="customizer-body" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+            <div class="accordion" id="accordionCustomizer">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <p class="mb-0">تغيير لون الموقع</p>
+                    </div>
+                    <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionCustomizer">
+                        <div class="card-body">
+                            <div class="colors sidebar-colors"><a class="color gradient-purple-indigo" data-sidebar-class="sidebar-gradient-purple-indigo"><i class="i-Eye"></i></a><a class="color gradient-black-blue" data-sidebar-class="sidebar-gradient-black-blue"><i class="i-Eye"></i></a><a class="color gradient-black-gray" data-sidebar-class="sidebar-gradient-black-gray"><i class="i-Eye"></i></a><a class="color gradient-steel-gray" data-sidebar-class="sidebar-gradient-steel-gray"><i class="i-Eye"></i></a><a class="color dark-purple active" data-sidebar-class="sidebar-dark-purple"><i class="i-Eye"></i></a><a class="color slate-gray" data-sidebar-class="sidebar-slate-gray"><i class="i-Eye"></i></a><a class="color midnight-blue" data-sidebar-class="sidebar-midnight-blue"><i class="i-Eye"></i></a><a class="color blue" data-sidebar-class="sidebar-blue"><i class="i-Eye"></i></a><a class="color indigo" data-sidebar-class="sidebar-indigo"><i class="i-Eye"></i></a><a class="color pink" data-sidebar-class="sidebar-pink"><i class="i-Eye"></i></a><a class="color red" data-sidebar-class="sidebar-red"><i class="i-Eye"></i></a><a class="color purple" data-sidebar-class="sidebar-purple"><i class="i-Eye"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card"> -->
+                    <!-- <div class="card-header" id="headingOne"> -->
+                        <!-- <p class="mb-0">RTL</p> -->
+                    <!-- </div> -->
+                    <!-- <div class="collapse show" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionCustomizer"> -->
+                        <!-- <div class="card-body"> -->
+                            <!-- <label class="checkbox checkbox-primary"> -->
+                                <!-- <input id="rtl-checkbox" type="checkbox" /><span>Enable RTL</span><span class="checkmark"></span> -->
+                            <!-- </label> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+<div>
+    <script src="js/plugins/jquery-3.7.1.min.js"></script>
+    <script src="js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="js/scripts/script.min.js"></script>
+    <script src="js/scripts/sidebar.compact.script.min.js"></script>
+    <script src="js/scripts/customizer.script.min.js"></script>
+    <script src="js/plugins/echarts.min.js"></script>
+    <script src="js/scripts/echart.options.min.js"></script>
+    <script src="js/scripts/dashboard.v1.script.min.js"></script>
+    <!-- <script src="js/plugins/dropzone.min.js"></script> -->
+    <!-- <script src="js/scripts/dropzone.script.min.js"></script> -->
+    <script src="js/plugins/cropper.min.js"></script>
+    <script src="js/scripts/cropper.script.min.js"></script>
+    <script src="js/plugins/datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="js/plugins/datepicker/locales/bootstrap-datepicker.ar.min.js"></script>
+	<script src="js/plugins/datatables.min.js"></script>
+	<script src="js/plugins/allfontawesome7.js"></script>
+	<script src="js/plugins/Semantic/semantic.min.js"></script>
+	<script src="js/scripts/tooltip.script.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+	<script src="js/calculations.js"></script>
+
+</div>
+<script>
+$(document).ready(function(){
+let isSubmitting = false;
+var mrahid;
+
+	$(document).on("click", ".mrahselector", function(){
+		process = 'selector';
+		mrahid = $(this).find("form").find("input").val();
+		console.log(mrahid);
+
+		formData = "&key="+process;		
+		formData = formData + "&id="+mrahid; 
+		
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/mrah.php',    
+			data: formData
+		})
+		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+
+			var status = response.id;			
+			var statusmessage = response.message;			
+			showalert(status,statusmessage);
+			if ( status == 'success' ) {
+				<!-- setTimeout(function() {    window.location.replace("stats.html");	}, 2000); -->
+				window.location.replace("stats.html");
+			}
+		});
+	});
+	
+	$(document).on("click", ".Add", function(){
+		$('.replacecb').hide();						// hide checkbox of updating categories of all existsting products
+		console.log("add clicked");
+		process = 'add';		
+		
+		$('.Addmodal').modal('show');
+		
+		$('.Addmodal').find('h4').html('إضافة مراح');	
+		
+		<!-- setTimeout(  function()   {	inputs[0].focus();	}, 500);			// focus on category input -->
+		<!-- inputs[0].closest('form').reset(); -->
+		<!-- inputs.last().val('add');	//console.log(inputs); -->
+		$('.submitdiv').find('button').hide();					$('.submitdiv').find('button').last().show();
+
+	});
+	
+	$(document).on("click", ".edit", function(){
+		<!-- $('.replacecb').show();					// show checkbox of updating categories of all existsting products -->
+		console.log("Editing");
+		process = 'edit';
+		
+		mrahid = $(this).closest(".card-body").find("form").find("input").val();
+
+		var mrahname = $(this).closest(".card-body").find("h3").html();
+		console.log("mrahid");	console.log(mrahid);
+		<!-- console.log("mrahname");	console.log(mrahname); -->
+		$('.Addmodal').modal('show');
+		
+		$('.Addmodal').find('h4').html('تعديل مراح');		
+		$('.Addmodal').find('input').val(mrahname);		
+						
+		// hide add button and show update button
+		$('.submitdiv').find('button').hide();		
+		$('.submitdiv').find('button').first().show();
+				
+	});
+	
+	$(document).on("click", ".delete", function(){
+		<!-- $('.replacecb').show();					// show checkbox of updating categories of all existsting products -->
+		console.log("Delet");
+		process = 'delete';
+		
+		mrahid = $(this).closest(".card-body").find("form").find("input").val();
+
+		var mrahname = $(this).closest(".card-body").find("h3").html();
+		console.log("mrahid");	console.log(mrahid);
+		<!-- console.log("mrahname");	console.log(mrahname); -->
+		$('.Delmodal').modal('show');
+	});
+
+	$(document).on("click", ".deleteitem", function(){
+				var submitbtn = $(this);
+		console.log("Safe Clicking");
+		var modal = $(this).closest(".modal");			
+		formData = "&key="+process;		
+		formData = formData + "&id="+mrahid; 
+		
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/mrah.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css({  "background-color": "#a7a4a4",   "border-color": "#fff" });
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css({  "background-color": "",   "border-color": "" });
+			}			
+		})
+		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+
+			var status = response.id;			
+			var statusmessage = response.message;			
+			var lastid = response.lastid;	
+			showalert(status,statusmessage);
+			if ( status == 'success' ) {
+				$('input[value="'+mrahid+'"]').closest(".card").parent().remove();
+				$('.Delmodal').modal('hide');
+			}
+		});
+	});	
+	
+	$(document).on("click", ".submit", function(){
+		console.log("SUBMITTING");
+		console.log("mrahid");	console.log(mrahid);
+		var submitbtn = $(this);
+		console.log("Safe Clicking");
+		var form = $(this).closest("form");
+		var formData = $(form).serialize();
+		// add category id to editing process
+		formData = formData + "&key="+process; 
+		if ( process == 'edit' ) {	
+			formData = formData + "&id="+mrahid; 
+		}
+		
+		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/mrah.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css('color', '#aeafae');
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css('color', 'green');
+			}			
+		})
+		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;		showalert(status,statusmessage);		
+			if ( status == 'success' ) {
+
+				var mrahname = $('input[name^="mrahname"]').val()
+				console.log('mrahname');	console.log(mrahname);
+				
+				if ( process == 'edit' ) {
+					var newname = response.data;
+					$('input[value="'+mrahid+'"]').closest("form").prev().html(newname); 
+				}
+
+				if ( process == 'add' ) {
+					var newid = response.newid;
+					var newcard = '';
+
+					newcard +=   '<div class="col-sm-12 col-md-4 col-lg-3 mb-3">';
+					newcard +=     '<div class="card">';
+					newcard +=      '<div class="card-body">';
+					newcard +=       '<div class="ul-widget__content-v4 card-icon-bg mrahselector">';
+					newcard +=        '<i class="i-warehouse text-success mb-1"></i>';
+					newcard +=        '<h3 class="t-font-boldest mt-2">'+form.find("input").val()+'</h3>';
+					newcard +=        '<form><input type="text" name="mrahid" id="mrahid" value="'+newid+'"hidden></form>';
+					newcard +=       '</div>';
+					newcard +=       '<i class="text-20 i-Arrow-Down-2 card-down-arrow"></i>';
+					newcard +=       '<div style="display: none;text-align: center;" class="card-setting ">';
+					newcard +=        '<i class="fa fa-pen text-info mb-1 mt-4 edit" style="width: 50%;font-size: 1rem;"></i>';
+					newcard +=        '<i class="fa fa-trash text-danger mb-1 mt-4 delete" style="width:50%;font-size: 1rem;"></i>';
+					newcard +=      '</div>';
+					newcard +=      '</div>';
+					newcard +=     '</div>';
+					newcard +=   '</div>';
+					$('.mrahrow').prepend(newcard);
+
+				}			
+				setTimeout(function() {    $('.Addmodal').modal('hide');	form.trigger("reset");	}, 500);
+				setTimeout(function() {    location.reload();	}, 1000);
+				
+			}
+		});
+	});
+	
+	$(document).on("click", ".card-down-arrow", function(){
+		$(this).next().slideToggle({
+		  start: function() {
+			$(this).css('display', 'flex');
+		  },
+		  duration: 200 
+		});
+	});
+
+});
+
+	$(document).on("click", ".close", function(){
+		$(this).closest(".modal").modal('hide');
+	});
+
+	$(document).on("click", ".closealert", function(){	//console.log('closealert');
+		$(this).closest(".alert-card").remove();
+	});
+
+
+
+</script>
+<ul class="nav nav-tabs fixed-bottom nav-justified" style="background: white;border-radius: 5px;margin: 1px;border: 1px solid #6d6d71;padding-right: 0;">
+   <li class="nav-item active pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="index.html">
+	<i class="fa fa-home text-125"></i><br>الرئيسية</a>
+  </li>
+   <li class="nav-item pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="stats.html">
+	<i class="fa fa-signal text-125"></i><br>بيانات</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="sheep.html">
+	<i class="fa fa-tasks text-125"></i><br>إدارة</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="feed.html">
+	<i class="fa fa-cubes text-125"></i><br>أعلاف</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="water.html">
+	<i class="fa fa-tint text-125"></i><br>مياه</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="others.html">
+	<i class="fa fa-syringe text-125"></i><br>اخرى</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="spending.html">
+	<i class="fa fa-coins text-125"></i><br>مصاريف</a>
+  </li>
+</ul>
+
+</body>
+
+</html>

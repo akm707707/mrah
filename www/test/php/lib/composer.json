@@ -1,0 +1,5 @@
+{
+    "require": {
+        "salla/zatca": "^3.0"
+    }
+}

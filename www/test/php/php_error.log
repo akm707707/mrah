@@ -1,0 +1,40 @@
+[07-Feb-2026 18:51:14 Asia/Riyadh] PHP Warning:  Undefined variable $event in D:\xampp\htdocs\mrah\php\sheep.php on line 764
+[07-Feb-2026 18:51:14 Asia/Riyadh] PHP Warning:  Undefined variable $event in D:\xampp\htdocs\mrah\php\sheep.php on line 767
+[07-Feb-2026 18:51:14 Asia/Riyadh] PHP Warning:  Undefined variable $event in D:\xampp\htdocs\mrah\php\sheep.php on line 780
+[07-Feb-2026 18:51:14 Asia/Riyadh] PHP Warning:  Undefined variable $event in D:\xampp\htdocs\mrah\php\sheep.php on line 783
+[07-Feb-2026 18:51:51 Asia/Riyadh] PHP Warning:  Undefined array key "events" in D:\xampp\htdocs\mrah\php\sheep.php on line 738
+[07-Feb-2026 18:52:59 Asia/Riyadh] PHP Warning:  Undefined array key "event" in D:\xampp\htdocs\mrah\php\sheep.php on line 738
+[07-Feb-2026 18:55:03 Asia/Riyadh] PHP Warning:  Array to string conversion in D:\xampp\htdocs\mrah\php\sheep.php on line 739
+[07-Feb-2026 18:55:03 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 866
+[07-Feb-2026 16:55:23 Europe/Berlin] PHP Parse error:  syntax error, unexpected variable "$evenunixtime" in D:\xampp\htdocs\mrah\php\sheep.php on line 739
+[07-Feb-2026 18:55:37 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 866
+[07-Feb-2026 18:55:56 Asia/Riyadh] PHP Warning:  Undefined array key "evenunixtime" in D:\xampp\htdocs\mrah\php\sheep.php on line 738
+[07-Feb-2026 18:55:56 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 866
+[07-Feb-2026 18:58:25 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 866
+[07-Feb-2026 18:59:18 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 871
+[07-Feb-2026 17:10:01 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "{" in D:\xampp\htdocs\mrah\php\sheep.php on line 741
+[07-Feb-2026 19:10:16 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 875
+[07-Feb-2026 19:10:29 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 875
+[07-Feb-2026 19:16:30 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 880
+[07-Feb-2026 19:30:29 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 876
+[07-Feb-2026 19:31:04 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 879
+[07-Feb-2026 19:32:22 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 880
+[07-Feb-2026 19:32:44 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 880
+[07-Feb-2026 19:33:34 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 879
+[07-Feb-2026 19:33:41 Asia/Riyadh] PHP Warning:  Undefined variable $responseArray in D:\xampp\htdocs\mrah\php\sheep.php on line 879
+[07-Feb-2026 19:42:56 Asia/Riyadh] PHP Warning:  Array to string conversion in D:\xampp\htdocs\mrah\php\sheep.php on line 784
+[07-Feb-2026 19:43:59 Asia/Riyadh] PHP Warning:  Undefined array key 1 in D:\xampp\htdocs\mrah\php\sheep.php on line 830
+[07-Feb-2026 19:43:59 Asia/Riyadh] PHP Warning:  Undefined array key 1 in D:\xampp\htdocs\mrah\php\sheep.php on line 831
+[07-Feb-2026 19:43:59 Asia/Riyadh] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: int - string in D:\xampp\htdocs\mrah\php\inc\functions.php:284
+Stack trace:
+#0 D:\xampp\htdocs\mrah\php\sheep.php(831): Time_Passed('', 'time')
+#1 {main}
+  thrown in D:\xampp\htdocs\mrah\php\inc\functions.php on line 284
+[07-Feb-2026 19:44:04 Asia/Riyadh] PHP Warning:  Undefined array key 1 in D:\xampp\htdocs\mrah\php\sheep.php on line 830
+[07-Feb-2026 19:44:04 Asia/Riyadh] PHP Warning:  Undefined array key 1 in D:\xampp\htdocs\mrah\php\sheep.php on line 831
+[07-Feb-2026 19:44:04 Asia/Riyadh] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: int - string in D:\xampp\htdocs\mrah\php\inc\functions.php:284
+Stack trace:
+#0 D:\xampp\htdocs\mrah\php\sheep.php(831): Time_Passed('', 'time')
+#1 {main}
+  thrown in D:\xampp\htdocs\mrah\php\inc\functions.php on line 284
+[07-Feb-2026 19:46:20 Asia/Riyadh] PHP Warning:  Array to string conversion in D:\xampp\htdocs\mrah\php\sheep.php on line 784

@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>مراح</title>
+	<link rel="icon" type="image/png" href="imgs/icons/favicon.ico">
+	<link rel="apple-touch-icon" href="imgs/icons/apple-touch-icon.png">
+    <link href="css/themes/lite-purple.min.css" rel="stylesheet">
+    <link href="css/extra/animatioin.css" rel="stylesheet">
+    <link href="css/extra/iosfix.css" rel="stylesheet">
+    <link href="css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/plugins/dropzone.min.css" />
+	<link href="css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/plugins/cropper.min.css" />
+    <link rel="stylesheet" href="css/plugins/animate.css" />
+    <!-- <link rel="stylesheet" href="../dist-assets/css/plugins/datepicker/bootstrap-datepicker.css" /> -->
+    <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker3.min.css" />
+	<script src="js/plugins/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/plugins/Semantic/semantic.rtl.min.css">
+	<script src="js/scripts/customizer.script.min.js"></script>
+	<!-- <script src="js/calculations.js"></script> -->
+
+<script>
+
+</script>
+
+</head>
+
+<style>
+
+
+
+
+ 
+</style>
+
+
+<body class="text-left">
+    <div class="app-admin-wrap layout-sidebar-compact clearfix">
+        <div class="main-content-wrap d-flex flex-column mb-5">
+            <div class="main-header">
+                <div class="logo" style="display:block;">
+					<img id="logo" src="imgs/logo_out.jpg" >
+                </div>
+                <div class="title mobilehide" style="margin-right: 9vw;">
+					<h1></h1>
+                </div>
+                <!-- <div class="menu-toggle" style="display:none;"><div></div><div></div><div></div></div> -->
+                
+                <div style="margin: auto; display:none;"></div>
+                <div class="header-part-right">
+                    <!-- Full screen toggle -->
+                    <!-- <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i> -->
+					<!-- Notificaiton -->
+                    <div class="dropdown pl-3" style="margin-bottom:-6px">
+                        <div class="badge-top-container" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- <span class="badge badge-primary">3</span> -->
+                            <!-- <i class="i-Bell text-muted header-icon"  -->
+							<i class="fa-regular fa-bell" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                        </div>
+					</div>
+                    <!-- Customizer Dropdown -->
+                    <!-- <i class="i-Gear header-icon  d-sm-inline-block callcustomizer" ></i> -->
+					<a href="finance.html" target="">
+						<img src="imgs/sar.svg"  alt="Description of the image" width="22" height="22" class="filter-grey"/>
+					</a>
+					<a href="setting.html" target="" >
+						<i class="fa-solid fa-gear pr-3" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;margin-top: 5px;"></i>
+					</a>					
+                    <!-- sign out -->
+					<i class="fa-solid fa-power-off header-icon pr-2 signout" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                    <!-- Notificaiton End -->
+                    <!-- User avatar dropdown -->
+                    <!-- <div class="dropdown"> -->
+                        <!-- <div class="user col align-self-end "> -->
+                            <!-- <img src="" id="avatar" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                            <!-- <div class="dropdown-menu dropdown-menu-left" aria-labelledby="avatar"> -->
+                                <!-- <div class="dropdown-header"> -->
+                                    <!-- <i class="mr-1 empname"></i>   -->
+                                <!-- </div> -->
+                                <!-- <a class="dropdown-item signout" >خروج</a> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+            </div><!-- ============ Body content start ============= -->
+            <div class="main-content">
+                <div class="breadcrumb mb-0">
+				<div class="row pb-3" style="width: 100%;">
+                    <h4 class="mr-2 mrahtitle col-lg-11 col-md-10 col-sm-8 col-xs-8 ml-0 pl-0 " style="padding-right: 15px !important;padding-top: 0.35rem !important;"></h4>
+					<h4 class="mr-2 col-lg-11 col-md-10 col-sm-8 col-xs-8 ml-0 pl-0 text-muted " style="padding-right: 15px !important;position: absolute;padding-top: 32px;">إدارة المصاريف</h4>
+
+					<!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pl-0 " ></div> -->
+					<div class="dropdown col-lg-1 col-md-2 col-sm-4 col-xs-4 pl-0 " >
+					  <button class="btn btn-outline-gold btn-lg  dropdown-toggle maxwidth" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">إضافه</button>
+					  <div class="dropdown-menu text-1" >
+						<a class="dropdown-item gold Addopex" >مصاريف تشغيلية</a>
+						<a class="dropdown-item gold Addcapex" >مصاريف رأس مالية</a>
+					  </div>
+					</div>
+                </div>
+                </div>
+                <div class="separator-breadcrumb border-top"></div>
+                <div class="row mainrow mb-5">			
+				</div>			
+            </div>
+        </div>
+    </div><!-- ============ Search UI Start ============= -->
+    <!-- ============ OPEX MODAL ============= -->
+	<div class="modal fade opexmodal pt-5 pb-5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered ">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-gold m">
+									<div class="close " style="position: absolute;position: absolute;  left: 5px;  top: 5px;">
+										<i class="fa fa-times text-175 text-c-white " ></i>
+									</div>
+								<h4 class="marginless" style="">
+								</h4>
+							</div>
+                            <div class="card-body">
+                                <form>
+									<div class="row">
+										<div role="group" class="col-lg-12 col-md-12  col-sm-12 form-group">
+											<label class=" text-1">
+											<span class="cleardd">الوصف</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="وصف المصاريف التشغيليه والتي تدفع بشكل دوري مثل ( راتب العامل، ايجار الأرض، رسوم حكومية، فاتورة كهرباء)"></i>
+											</label>
+
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="description" type="text" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+										<div role="group" class="col-lg-12 col-md-12  col-sm-12 form-group">
+											<label class=" text-1">
+											<span class="cleardd">قيمة التكلفه</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="مقدار التكلفه مثل قيمة الراتب او الايجار او الرسوم او الفاتوره"></i>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="cost" type="text" inputmode="decimal" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+										<div role="group" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group ">
+											<label class=" text-1">
+											<span class="cleardd">دورة التكلفه</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="هل يتم دفعها لشكل شهري او سنوي. لحذف الاختيار الضغط على علامة السهم المتجه لأسفل يسار القائمه والقائمة مفتوحه"></i>
+											</label>
+
+											<div role="group" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0">
+												<div class="btn-group radius justified " role="group" aria-label="Basic example" >
+													<button class="btn pressable  btn-lg inputpadding pressable-gold  " type="button" name="monthly" checked >شهري</button>
+													<button class="btn pressable  btn-lg inputpadding pressable-gold" type="button" name="yearly">سنوي</button>
+												</div>
+											</div>									
+											<div class="col-md-2 form-group col-sm-3 " style="display:none;" >	<!-- Hidden -->
+												<input type="radio" name="cycle" value="monthly" />
+												<input type="radio" name="cycle" value="yearly" />
+											</div>
+										</div>
+										<div role="group" class="col-lg-12 col-md-12  col-sm-12 form-group">
+											<label class=" text-1">
+											<span class="cleardd">الشهر</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="اختر الشهر التي دفعت عنه التكلفه أعلاه"></i>
+											</label>
+
+											<select class="ui fluid search dropdown monthdd" name="month" >
+											  <option value="01">يناير (1)</option>
+											  <option value="02">فبراير (2)</option>
+											  <option value="03">مارس (3)</option>
+											  <option value="04">ابريل (4)</option>
+											  <option value="05">مايو (5)</option>
+											  <option value="06">يونيو (6)</option>
+											  <option value="07">يوليو (7)</option>
+											  <option value="08">اغسطس (8)</option>
+											  <option value="09">سبتمبر (9)</option>
+											  <option value="10">اكتوبر (10)</option>
+											  <option value="11">نوفمبر (11)</option>
+											  <option value="12">ديسمبر (12)</option>
+											</select>
+										</div>
+										<div role="group" class="col-lg-12 col-md-12  col-sm-12 form-group">
+											<label class=" text-1">
+											<span class="cleardd">السنه</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="اختر العام التي دفعت عنه التكلفه أعلاه"></i>
+											</label>
+											<select class="ui fluid search dropdown yeardd" name="year" >
+											  <option value="2023">2023</option>
+											  <option value="2024">2024</option>
+											  <option value="2025">2025</option>
+											  <option value="2026">2026</option>
+											  <option value="2027">2027</option>
+											  <option value="2028">2028</option>
+											  <option value="2029">2029</option>
+											  <option value="2030">2030</option>
+
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 centered submitdiv mt-1" style="" >
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="display:none;font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-redo-alt" style="font-size: 30px;"></i></span></button>
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-plus" style="font-size: 30px;"></i></span></button>
+										</div>	
+									</div>
+									<label class="text-12 text-c-red m-0"><i class="dropdown icon text-c-black text-16" style="margin: 0;font-size: 14px;"></i>لحذف مدخلات القوائم المنسدله اضغط على وصف المدخل أو على السهم المتجه لأسفل أيسر القائمه بعد فتحها</label>
+								</form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- ============ CAPEX MODAL ============= -->
+	<div class="modal fade capexmodal pt-5 pb-5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered ">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-gold m">
+									<div class="close " style="position: absolute;position: absolute;  left: 5px;  top: 5px;">
+										<i class="fa fa-times text-175 text-c-white " ></i>
+									</div>
+								<h4 class="marginless" style="">
+								</h4>
+							</div>
+                            <div class="card-body">
+                                <form>
+									<div class="row">
+										<div role="group" class="col-lg-12 col-md-12  col-sm-12 form-group">
+											<label class=" text-1">
+											<span class="cleardd">الوصف</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="وصف التكاليف الرأسماليه وهي التي تدفع مره واحده فقط مثل شراء أرض، سياره، شبوك، معالف، مزرعه، خيمه ..الخ"></i>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="description" type="text" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+										<div role="group" class="col-lg-12 col-md-12  col-sm-12 form-group">
+											<label class=" text-1">
+											<span class="cleardd">قيمة التكلفه</span>
+												<i class="fa fa-question text-16 ttcss " data-toggle="tooltip" data-placement="top" title="" data-original-title="مقدار المبلغ المدفوع"></i>
+											</label>
+											<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+												<input class="form-control" name="cost" type="text" inputmode="decimal" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 centered submitdiv mt-1" style="" >
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="display:none;font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-redo-alt" style="font-size: 30px;"></i></span></button>
+                                            <button class="btn round btn-crop btn-icon rounded-circle m-1 submit" id="" type="button" style="font-size: 0.25rem;color: green;"><span class="ul-btn__icon"><i class="fas fa-plus" style="font-size: 30px;"></i></span></button>
+										</div>	
+									</div>
+								</form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade columntoggle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered ">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-gold m"><h4 class="marginless"style="">إظهار وإخفاء الأعمده</h4></div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row checkboxes">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <form>
+								    <div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 mb-1 centered hideshow"><label class="checkbox checkbox-outline-primary" ><input class="global" name="select" type="checkbox" checked ><span>تحديد الكل</span><span class="checkmark"></span></label></div>									
+									</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- ============ LOADER MODAL ============= -->
+    <div class="modal fade loader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered " style="width: fit-content;  max-width: 700px;	margin: 1.75rem auto;">
+			<div class="spinner-bubble spinner-bubble-primary m-5"></div>
+		</div>
+    </div>
+	<!-- ============ Search UI End ============= -->
+    <div class="customizer" style="display:none;" >
+        <div class="handle" style="display:none;"><i class="i-Gear spin"></i></div>
+        <div class="customizer-body" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+            <div class="accordion" id="accordionCustomizer">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <p class="mb-0">تغيير لون الموقع</p>
+                    </div>
+                    <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionCustomizer">
+                        <div class="card-body">
+                            <div class="colors sidebar-colors"><a class="color gradient-purple-indigo" data-sidebar-class="sidebar-gradient-purple-indigo"><i class="i-Eye"></i></a><a class="color gradient-black-blue" data-sidebar-class="sidebar-gradient-black-blue"><i class="i-Eye"></i></a><a class="color gradient-black-gray" data-sidebar-class="sidebar-gradient-black-gray"><i class="i-Eye"></i></a><a class="color gradient-steel-gray" data-sidebar-class="sidebar-gradient-steel-gray"><i class="i-Eye"></i></a><a class="color dark-purple active" data-sidebar-class="sidebar-dark-purple"><i class="i-Eye"></i></a><a class="color slate-gray" data-sidebar-class="sidebar-slate-gray"><i class="i-Eye"></i></a><a class="color midnight-blue" data-sidebar-class="sidebar-midnight-blue"><i class="i-Eye"></i></a><a class="color blue" data-sidebar-class="sidebar-blue"><i class="i-Eye"></i></a><a class="color indigo" data-sidebar-class="sidebar-indigo"><i class="i-Eye"></i></a><a class="color pink" data-sidebar-class="sidebar-pink"><i class="i-Eye"></i></a><a class="color red" data-sidebar-class="sidebar-red"><i class="i-Eye"></i></a><a class="color purple" data-sidebar-class="sidebar-purple"><i class="i-Eye"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card"> -->
+                    <!-- <div class="card-header" id="headingOne"> -->
+                        <!-- <p class="mb-0">RTL</p> -->
+                    <!-- </div> -->
+                    <!-- <div class="collapse show" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionCustomizer"> -->
+                        <!-- <div class="card-body"> -->
+                            <!-- <label class="checkbox checkbox-primary"> -->
+                                <!-- <input id="rtl-checkbox" type="checkbox" /><span>Enable RTL</span><span class="checkmark"></span> -->
+                            <!-- </label> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+<div>
+    <script src="js/plugins/jquery-3.7.1.min.js"></script>
+    <script src="js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="js/scripts/script.min.js"></script>
+    <script src="js/scripts/sidebar.compact.script.min.js"></script>
+    <script src="js/scripts/customizer.script.min.js"></script>
+    <script src="js/plugins/echarts.min.js"></script>
+    <script src="js/scripts/echart.options.min.js"></script>
+    <script src="js/scripts/dashboard.v1.script.min.js"></script>
+    <!-- <script src="js/plugins/dropzone.min.js"></script> -->
+    <!-- <script src="js/scripts/dropzone.script.min.js"></script> -->
+    <!-- <script src="js/plugins/cropper.min.js"></script> -->
+    <!-- <script src="js/scripts/cropper.script.min.js"></script> -->
+    <!-- <script src="js/plugins/datepicker/bootstrap-datepicker.min.js"></script> -->
+    <!-- <script src="js/plugins/datepicker/locales/bootstrap-datepicker.ar.min.js"></script> -->
+	<script src="js/plugins/datatables.min.js"></script>
+	<script src="js/plugins/allfontawesome7.js"></script>
+	<script src="js/plugins/Semantic/semantic.min.js"></script>
+	<script src="js/scripts/tooltip.script.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+	<script src="js/calculations.js"></script>
+</div>
+<script>
+$(document).ready(function(){
+
+// For verify php
+var username;
+var editid;
+const leadzero = (num, places) => String(num).padStart(places, '0')				//userdataid = leadzero(identifier, 4)
+
+// Get Today month and yearconst 
+now = new Date();
+var monthNumber = now.getMonth() + 1;		monthNumber = leadzero(monthNumber, 2);			// Month Number
+var yearNumber = now.getFullYear();	//Year
+
+console.log(monthNumber);   // → 2   (for February)
+console.log(yearNumber);          // → 2026
+// verify login credintials and retreive Bussniess data
+var start = new Date().getTime();
+ $.ajax({	
+	type: 'POST',	
+	url    : "php/verify.php",
+ })
+ .done(function(response) {												//console.log(response); 
+ var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+
+	if ( response.id == 'success' ) {		
+	
+		userid = response.data.userid;
+		name = response.data.name;
+		mobile = response.data.mobile;
+		email = response.data.email;
+		//pass = response.data.pass;
+		mrah = response.data.mrah;
+		time = response.data.time;
+		if ( response.data.mrahid && response.data.mrahname ) {
+			mrahid = response.data.mrahid;
+			mrahname = response.data.mrahname;
+			
+			$( ".title" ).find("h1").html(name);
+			$( ".mrahtitle" ).html('مراح '+mrahname);
+		} else {
+			console.log("not sucess");
+			showalert('danger','لم تقم بإختيار المراح');
+			setTimeout(function() {    window.location.replace("index.html");	}, 5000);
+		}
+	} else {
+		console.log("not sucess");
+		window.location.replace("login.html");
+	}
+  });
+  
+
+let isSubmitting = false;
+var start = new Date().getTime();
+$.ajax({
+	type: 'POST',
+	url    : 'php/spending.php',
+	data: ({mobile: 'hi'}),
+})
+.done(function(response) {
+	
+	var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+	setTimeout(function() {    $('.loader').modal('hide');	}, 500);
+	var j = 0;
+	var waternumbasedonquantity = 0;
+	var waterintake;
+	var suppliernamearr = [];
+	var suppliermobilearr = [];
+	var status = response.id;		
+	<!-- var statusmessage = response.message; -->
+	if ( status == 'success' ) {
+		var opexnum = response.opexnum;
+		if ( opexnum > 0 ) {	
+			newcard = '';
+			for (var i = 0; i < response[j].length; i++) {	response[j][i].cost = Number(response[j][i].cost);
+				<!-- var monthtag = response[j][i].month + ' ' + response[j][i].year; -->
+				var monthtag = response[j][i].month+' (' + response[j][i].monthnumeric+') ' + response[j][i].year;
+
+				newcard += '<div class="title header-gold">';
+				newcard += '<i class="dropdown icon"></i>'+response[j][i].description+' ('+response[j][i].cyclear+')';
+				newcard += '<span style="float: left;">'+monthtag+'</span>';
+				newcard += '</div>';
+
+				newcard += '<div class="content">';
+				<!-- newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-1"></div>'; -->
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-3 pb-0">';
+				
+				newcard += '<div class="row ">';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">رقم المعرف</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-steelblue text-1 p-0 ma ">'+response[j][i].id+'</span>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">الوصف</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-darkgreen text-bold  text-1 p-0 ma ">'+response[j][i].description+'</span>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">دورة التكلفه</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-blue  text-1 p-0 ma ">'+response[j][i].cyclear+'</span>';
+
+				if ( response[j][i].cycle == 'monthly' ) {
+					newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">الشهر</span>';
+					newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-blue  text-1 p-0 ma ">'+response[j][i].month+' '+response[j][i].year+'</span>';
+
+				} else {
+					newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">يبدأ في</span>';
+					newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-blue  text-1 p-0 ma ">'+response[j][i].month+' '+response[j][i].year+'</span>';
+					newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">ينتهي في</span>';
+					newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-blue  text-1 p-0 ma ">'+response[j][i].endmonth+' '+response[j][i].endyear+'</span>';
+
+				}
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">التكلفه</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-darkgreen text-1 p-0 ma ">'+response[j][i].cost.toLocaleString('en-US')+' ريال</span>';
+
+
+				<!-- newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">التكلفه</span>'; -->
+				<!-- newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-darkgreen text-1 text-center p-0 ma ">'+response[j][i].cost+' ريال</span>'; -->
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">الحاله</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-blue  text-1 p-0 ma ">'+response[j][i].status+'</span>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+
+				
+
+				newcard +=      '<form class="maxwidth">';
+				newcard +=       '<input type="hidden" name="id" value="'+response[j][i].id+'">';
+				newcard +=       '<input type="hidden" name="description" value="'+response[j][i].description+'">';
+				newcard +=       '<input type="hidden" name="cycle" value="'+response[j][i].cycle+'">';
+				newcard +=       '<input type="hidden" name="cost" value="'+response[j][i].cost+'">';
+				newcard +=       '<input type="hidden" name="monthnumeric" value="'+response[j][i].monthnumeric+'">';
+				newcard +=       '<input type="hidden" name="year" value="'+response[j][i].year+'">';
+				newcard +=      '</form>';
+				newcard +=      '<button class="btn btn-outline-info btn-lg width46 m-1 mt-2 editopex" type="button" >تعديل</button>';
+				newcard +=      '<button class="btn btn-outline-danger btn-lg mt-2 width46 m-1 presubmit" type="button" >حذف</button>';
+				newcard +=      '<button class="btn btn-danger btn-lg maxwidth m-1 mt-2  delete" style="display:none;" name="opex" value="'+response[j][i].id+'" type="button"  >تأكيد</button>';
+
+				newcard += '</div>';
+				newcard += '</div>';
+				newcard += '</div>';
+			}
+			newcard = '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" ><p class=" text-24 maxwidth text-center mb-3">التكاليف التشغيلية</p><div class="ui styled  accordion mb-3" style="margin: auto;width: 93%;">'+newcard+'</div></div>';
+			$('.mainrow').append(newcard);
+
+			j++;
+		} else {
+			newcard = '<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-24 maxwidth text-center mb-3">لا يوجد تكاليف تشغيلية</p>';
+			$('.mainrow').append(newcard);
+		}
+		
+		var capexnum = response.capexnum;
+		if ( capexnum > 0 ) {	
+			newcard = '';
+			for (var i = 0; i < response[j].length; i++) {		response[j][i].cost = Number(response[j][i].cost);
+				newcard += '<div class="title header-gold">';
+				newcard += '<i class="dropdown icon"></i>'+response[j][i].description;
+				newcard += '<span style="float: left;">'+response[j][i].cost.toLocaleString('en-US') +' ريال</span>';
+				newcard += '</div>';
+				<!-- newcard += '<div class="title header-gold">'; -->
+				<!-- newcard += '<i class="dropdown icon"></i>'+response[j][i].description; -->
+				<!-- newcard += '</div>'; -->
+
+				newcard += '<div class="content">';
+				<!-- newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-1"></div>'; -->
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-3 pb-0">';
+				
+				newcard += '<div class="row ">';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">رقم المعرف</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-steelblue text-1 p-0 ma ">'+response[j][i].id+'</span>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">الوصف</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-darkgreen  text-1 p-0 ma ">'+response[j][i].description+'</span>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">التكلفه</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-darkgreen text-1 p-0 ma ">'+response[j][i].cost.toLocaleString('en-US')+' ريال</span>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+
+				newcard +=      '<form class="maxwidth">';
+				newcard +=       '<input type="hidden" name="id" value="'+response[j][i].id+'">';
+				newcard +=       '<input type="hidden" name="description" value="'+response[j][i].description+'">';
+				newcard +=       '<input type="hidden" name="cost" value="'+response[j][i].cost+'">';
+				newcard +=      '</form>';
+				newcard +=      '<button class="btn btn-outline-info btn-lg width46 m-1 mt-2 editcapex" type="button" >تعديل</button>';
+				newcard +=      '<button class="btn btn-outline-danger btn-lg mt-2 width46 m-1 presubmit" type="button" >حذف</button>';
+				newcard +=      '<button class="btn btn-danger btn-lg maxwidth m-1 mt-2  delete" style="display:none;" name="capex" value="'+response[j][i].id+'" type="button"  >تأكيد</button>';
+
+				newcard += '</div>';
+				newcard += '</div>';
+				newcard += '</div>';
+			}
+			newcard = '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" ><p class=" text-24 maxwidth text-center mb-3">التكاليف الرأسماليه</p><div class="ui styled  accordion mb-3" style="margin: auto;width: 93%;">'+newcard+'</div></div>';
+			$('.mainrow').append(newcard);
+
+			j++;
+		} else {
+			newcard = '<p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-24 maxwidth text-center mb-3">لا يوجد تكاليف رأسماليه</p>';
+			$('.mainrow').append(newcard);
+		}
+		
+		$(function() {
+			$('.ui.monthdd').dropdown('refresh');	$('.ui.monthdd').dropdown('clear');	
+				$('.ui.monthdd').dropdown({   clearable: true,	direction: 'upward', fullTextSearch: true });
+			$('.ui.yeardd').dropdown('refresh');	$('.ui.yeardd').dropdown('clear');	
+				$('.ui.yeardd').dropdown({   clearable: true,	direction: 'upward', fullTextSearch: true });
+			
+			$('.ui.yeardd .search').attr('inputmode', 'numeric').attr('pattern', '[0-9]*');
+
+			$('.ui.accordion').accordion({	exclusive: false	});
+			
+		});
+	}
+	
+	let calculationsscript = document.createElement('script');
+	calculationsscript.async = false;
+	calculationsscript.defer = false;
+	document.head.appendChild(calculationsscript);
+	calculationsscript.onload = function(){
+	}
+	calculationsscript.src = 'js/scripts/tooltip.script.min.js';
+
+});	
+
+
+	$(document).on("click", ".presubmit", function(){
+		// Hide pay debt form
+		if ( $(this).siblings().last().is(":visible") && !$(this).siblings().last().is(":button") ) { 
+			$(this).siblings().last().slideUp(250);
+		}
+		// Adjust button width 
+		if ( $(this).hasClass("width46") ) {
+			$(this).next().removeClass('maxwidth');
+			$(this).next().addClass('width46');
+		}
+		$(this).slideUp();
+		$(this).next().delay(500).slideDown(250);
+		showalert('warning', 'لا تقم بحذف التكلفة إلا إذا إضيفت عن طريق الخطأ. إبقاء التكاليف السابقه يساعد في الحسابات الماليه')
+	});
+
+	$(document).on("click", ".submitintake", function(){
+		console.log("submitintake");
+		var submitbtn = $(this);
+		console.log("Safe Clicking");
+
+		var form = $(this).closest(".row").find("form");
+		var formData = $(form).serialize();
+		formData = formData + "&key=intake"; 		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/spending.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css('color', '#aeafae');
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css('color', 'green');
+			}		
+		})
+		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;		showalert(status,statusmessage);		
+		});
+	});
+
+	$(document).on("click", ".deletesupplier", function(){
+		var process = 'deletesupplier';
+		var submitbtn = $(this);
+		console.log("Safe Clicking");
+
+		console.log($(this).val());
+		console.log("deletesupplier");
+		var content = $(this).closest(".content");
+		formData = "id="+$(this).val()+"&key=" + process; 		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/spending.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css({  "background-color": "#a7a4a4",   "border-color": "#fff" });
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css({  "background-color": "",   "border-color": "" });
+			}		
+		})
+		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;		showalert(status,statusmessage);	
+			if ( status == 'success' ) {	
+				if ( process == 'deletesupplier' ) {	
+					content.prev().remove();		content.remove();
+				}
+			}
+		});
+	});
+	
+	$(document).on("click", ".delete", function(){
+		var process = 'delete';
+		var submitbtn = $(this);
+		console.log("Safe Clicking");
+		console.log($(this).val());
+		console.log("delete");
+		var content = $(this).closest(".content");
+		formData = "id="+$(this).val()+"&category="+$(this).attr('name') +"&key=" + process; 		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/spending.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css({  "background-color": "#a7a4a4",   "border-color": "#fff" });
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css({  "background-color": "",   "border-color": "" });
+			}		
+		})
+		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;
+			if ( status == 'success' ) {	
+				localStorage.setItem('status', status);			localStorage.setItem('statusmessage', statusmessage);			
+				if ( process == 'delete' ) {	
+					content.prev().remove();		content.remove();	
+					location.reload();
+				}
+			} else {
+				showalert(status,statusmessage);
+			}
+		});
+	});
+		
+	$(document).on("click", ".Addopex", function(){		//console.log("Addfeed clicked");
+		process = 'addopex';		
+		$('.opexmodal').modal('show');
+		$('.opexmodal').find('h4').html('إضافة مصاريف تشغيلية');		
+		$('.opexmodal').find('form').trigger("reset");		
+		$('.opexmodal').find('.dropdown').dropdown('clear');
+		$('.opexmodal').find('.submitdiv').find('button').hide();
+		$('.opexmodal').find('button').last().show();
+		$('.opexmodal').find('.ui.monthdd').dropdown('set selected', monthNumber);	
+		$('.opexmodal').find('.ui.yeardd').dropdown('set selected', yearNumber);	
+	});
+	
+	$(document).on("click", ".Addcapex", function(){		//console.log("Addfeed clicked");
+		process = 'addcapex';		
+		$('.capexmodal').modal('show');
+		$('.capexmodal').find('h4').html('إضافة مصاريف رأس ماليه');		
+		$('.capexmodal').find('form').trigger("reset");		
+		$('.capexmodal').find('.dropdown').dropdown('clear');
+		$('.capexmodal').find('.submitdiv').find('button').hide();
+		$('.capexmodal').find('button').last().show();
+		$('.capexmodal').find('.ui.monthdd').dropdown('set selected', monthNumber);	
+		$('.capexmodal').find('.ui.yeardd').dropdown('set selected', yearNumber);	
+
+	});
+			
+	$(document).on("click", ".editopex", function(){
+		var form = $(this).prev();
+		<!-- $('.replacecb').show();					// show checkbox of updating categories of all existsting products -->
+		console.log("Editing");
+		process = 'editopex';
+		editid = form.find('input[name^="id"]').val();
+		$('.opexmodal').find('input[name^="description"]').val(form.find('input[name^="description"]').val());
+		$('.opexmodal').find('input[name^="cost"]').val(form.find('input[name^="cost"]').val());
+		$('.opexmodal').find('button[name^="'+form.find('input[name^="cycle"]').val()+'"]').addClass('pressed');
+		$('.opexmodal').find(":radio[value="+form.find('input[name^="cycle"]').val()+"]").prop("checked", true);		
+		$('.opexmodal').find('.ui.monthdd').dropdown('set selected', form.find('input[name^="monthnumeric"]').val());	
+		$('.opexmodal').find('.ui.yeardd').dropdown('set selected', form.find('input[name^="year"]').val());	
+
+		$('.opexmodal').modal('show');
+		
+		$('.opexmodal').find('h4').html('تعديل تكاليف تشغيلية');		
+						
+		// hide add button and show update button
+		$('.opexmodal').find('.submitdiv').find('button').hide();		
+		$('.opexmodal').find('.submitdiv').find('button').first().show();
+	});
+	
+	$(document).on("click", ".editcapex", function(){
+		var form = $(this).prev();
+		<!-- $('.replacecb').show();					// show checkbox of updating categories of all existsting products -->
+		console.log("Editing editcapex");
+		process = 'editcapex';
+		editid = form.find('input[name^="id"]').val();
+		$('.capexmodal').find('input[name^="description"]').val(form.find('input[name^="description"]').val());
+		$('.capexmodal').find('input[name^="cost"]').val(form.find('input[name^="cost"]').val());
+
+		$('.capexmodal').modal('show');
+		
+		$('.capexmodal').find('h4').html('تعديل تكاليف رأسماليه');		
+						
+		// hide add button and show update button
+		$('.capexmodal').find('.submitdiv').find('button').hide();		
+		$('.capexmodal').find('.submitdiv').find('button').first().show();
+	});
+	
+	$(document).on("click", ".submit", function(){
+		console.log("SUBMITTING");
+		var submitbtn = $(this);
+		console.log("Safe Clicking");
+		var form = $(this).closest("form");
+		var formData = $(form).serialize();
+		// add category id to editing process
+		formData = formData + "&key="+process; 
+		if ( process == 'editopex' || process == 'editcapex' ) {		formData = formData + "&id="+editid; 		}
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/spending.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css('color', '#aeafae');
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css('color', 'green');
+			}		
+		})
+		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;		
+			if ( status == 'success' ) {		
+				localStorage.setItem('status', status);			localStorage.setItem('statusmessage', statusmessage);						
+				if ( process == 'addopex' || process == 'editopex' ) {
+					setTimeout(function() {    $('.opexmodal').modal('hide');	form.trigger("reset");		}, 500);
+				}			
+				if ( process == 'addcapex' || process == 'editcapex' ) {
+					setTimeout(function() {    $('.capexmodal').modal('hide');	form.trigger("reset");		}, 500);
+				}
+				location.reload();
+			} else {
+				showalert(status,statusmessage);
+			}
+		});
+	});
+	
+	$(document).on("click", ".submitedit", function(){
+		console.log("SUBMITTING submitedit");
+		var submitbtn = $(this);
+		console.log("Safe Clicking");
+
+		var form = $(this).closest("form");
+		var formData = $(form).serialize();
+		// add category id to editing process
+		formData = formData + "&key="+process; 		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/spending.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css('color', '#aeafae');
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css('color', 'green');
+			}		
+		})
+		.done(function(response) {
+		
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;
+			if ( status == 'success' ) {
+				localStorage.setItem('status', status);			localStorage.setItem('statusmessage', statusmessage);			
+				setTimeout(function() {    $('.Editmodal').modal('hide');	form.trigger("reset");		}, 500);
+				location.reload();
+			} else {
+				showalert(status,statusmessage);
+			}
+		
+		});
+	});
+	
+	$(document).on("click", ".paydebt", function(){		$(this).siblings().last().show();	});
+
+	$(document).on("click", ".submitpaydebt", function(){
+		process = 'editpurchase';		
+		var submitbtn = $(this);
+		console.log("Safe Clicking");
+
+		var form = $(this).prev();
+		var formData = $(form).serialize();
+		formData = formData + "&key="+process; 
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/spending.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css('color', '#aeafae');
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css('color', 'green');
+			}		
+		})
+		.done(function(response) {
+		
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;		
+			if ( status == 'success' ) {
+				localStorage.setItem('status', status);			localStorage.setItem('statusmessage', statusmessage);			
+				location.reload();
+			} else {
+				showalert(status,statusmessage);
+			}
+		
+		});
+
+	});
+	
+ 	if (localStorage.getItem('status') !== null && localStorage.getItem('statusmessage') !== null) {		
+		showalert(localStorage.getItem('status'),localStorage.getItem('statusmessage'));
+		localStorage.removeItem('status');	localStorage.removeItem('statusmessage');	
+	}
+});		
+
+	$(document).on("click", ".cleardd", function(){	
+		 if ( $(this).parent().next().hasClass('ui') ) {
+			$(this).parent().next().dropdown('clear');
+		 } else {	
+			$(this).parent().next().find("input").val('');
+		 }
+	});
+
+	$(document).on("click", ".close", function(){
+		$(this).closest(".modal").modal('hide');
+	});
+
+	$(document).on("click", ".pressable", function(){
+		btngroup = $(this).closest('.btn-group');			
+		formgroup = $(this).closest('.form-group');			
+		vatstatus = $(this).attr('name');
+		if ( $(this).hasClass('pressed') ) {	
+			$(this).removeClass('pressed');
+			formgroup.find(":radio").prop("checked", false);
+		} else {
+			// Bill Buttons
+			if ( vatstatus == 'monthly' || vatstatus == 'yearly'  ) { 	
+				// set hidden radio buttons for vatability
+				formgroup.find(":radio[value="+vatstatus+"]").prop("checked", true);		
+			} 
+			btngroup.find('button').removeClass('pressed');	
+			$(this).addClass('pressed'); 
+		}
+	});
+	
+	$('input[name^="unitcost"]').on("keyup",function(){ 	//console.log('unitcost key up');
+		var row = $(this).closest(".row");
+		var unitcost = row.find("input[name='unitcost']");
+		var totalcost = row.find("input[name='totalcost']");
+		var quantityval = row.find(".ui.quantitydd").find(":selected").val();	
+		if( quantityval ) {	totalcost.val(unitcost.val()*quantityval);	}	
+	});
+	
+	$('input[name^="totalcost"]').on("keyup",function(){ 	//console.log('totalcost key up');
+		var row = $(this).closest(".row");
+		var unitcost = row.find("input[name='unitcost']");
+		var totalcost = row.find("input[name='totalcost']");
+		var quantityval = row.find(".ui.quantitydd").find(":selected").val();	
+		if( quantityval ) {	unitcost.val(totalcost.val()/quantityval);	}	
+	});
+
+
+</script>
+
+<ul class="nav nav-tabs fixed-bottom nav-justified" style="background: white;-top: 1px solid #6d6d71;border-radius: 5px;margin: 1px;border: 1px solid #6d6d71;padding-right: 0;">
+   <li class="nav-item pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="index.html">
+	<i class="fa fa-home text-125"></i><br>الرئيسية</a>
+  </li>
+   <li class="nav-item pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="stats.html">
+	<i class="fa fa-signal text-125"></i><br>بيانات</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="sheep.html">
+	<i class="fa fa-tasks text-125"></i><br>إدارة</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="feed.html">
+	<i class="fa fa-cubes text-125"></i><br>أعلاف</a>
+  </li>
+  <li class="nav-item  pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="water.html">
+	<i class="fa fa-tint text-125"></i><br>مياه</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="others.html">
+	<i class="fa fa-syringe text-125"></i><br>اخرى</a>
+  </li>
+  <li class="nav-item active pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="spending.html">
+	<i class="fa fa-coins text-125"></i><br>مصاريف</a>
+  </li>
+</ul>
+
+</body>
+
+</html>
