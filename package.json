@@ -1,4 +1,6 @@
 {
+  "name": "Mrah Tech",
+  "version": "1.0.0",
   "dependencies": {
     "@capacitor-firebase/authentication": "^8.0.1",
     "@capacitor/core": "^8.1.0",
@@ -6,6 +8,13 @@
     "firebase": "^12.9.0"
   },
   "devDependencies": {
-    "@capacitor/cli": "^8.1.0"
+    "@capacitor/cli": "^8.1.0",
+    "plist": "^3.1.0"
+  },
+  "scripts": {
+    "bump-build": "node -e \"const fs = require('fs'); const plist = require('plist'); const path = 'ios/App/App/Info.plist'; let data; try { data = fs.readFileSync(path, 'utf8'); } catch(e) { console.error('Info.plist not found'); process.exit(1); } const obj = plist.parse(data); const current = obj.CFBundleVersion || '1'; obj.CFBundleVersion = String(Number(current) + 1); fs.writeFileSync(path, plist.build(obj)); console.log('Build number bumped to ' + obj.CFBundleVersion);\"",
+    "sync": "npx cap sync ios",
+    "build-and-bump": "npm run bump-build && npm run sync",
+    "prepare-deploy": "npm run build-and-bump && git add . && git commit -m 'Bump build number' && git push"
   }
 }
