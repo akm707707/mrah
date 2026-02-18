@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>مراح</title>
+	<link rel="icon" type="image/png" href="imgs/icons/favicon.ico">
+	<link rel="apple-touch-icon" href="imgs/icons/apple-touch-icon.png">
+    <link href="css/themes/lite-purple.min.css" rel="stylesheet">
+    <link href="css/extra/animatioin.css" rel="stylesheet">
+    <link href="css/extra/iosfix.css" rel="stylesheet">
+    <link href="css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+    <!-- <!-- <link rel="stylesheet" href="css/plugins/dropzone.min.css" /> -->
+	<link href="css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+    <!-- <!-- <link rel="stylesheet" href="css/plugins/cropper.min.css" /> -->
+    <link rel="stylesheet" href="css/plugins/animate.css" />
+    <!-- <link rel="stylesheet" href="../dist-assets/css/plugins/datepicker/bootstrap-datepicker.css" /> -->
+    <!-- <!-- <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker.min.css" /> -->
+    <!-- <!-- <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker3.min.css" /> -->
+	<script src="js/plugins/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/plugins/Semantic/semantic.rtl.min.css">
+	<!-- <!-- <script src="js/scripts/customizer.script.min.js"></script> -->
+	<!-- <script src="js/calculations.js"></script> -->
+
+<script>
+
+</script>
+
+</head>
+
+<style>
+
+.add50, .substract50 {
+  touch-action: manipulation;
+}
+
+
+ 
+</style>
+
+
+<body class="text-left">
+    <div class="app-admin-wrap layout-sidebar-compact clearfix">
+        <div class="main-content-wrap d-flex flex-column mb-5">
+            <div class="main-header">
+                <div class="logo" style="display:block;">
+					<img id="logo" src="imgs/logo_out.jpg" >
+                </div>
+                <div class="title mobilehide" style="margin-right: 9vw;">
+					<h1></h1>
+                </div>                
+                <div style="margin: auto; display:none;"></div>
+                <div class="header-part-right">
+                    <div class="dropdown pl-3" style="margin-bottom:-6px">
+                        <div class="badge-top-container" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa-regular fa-bell" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                        </div>
+					</div>
+					<a href="finance.html" target="">
+						<img src="imgs/sar.svg"  alt="Description of the image" width="22" height="22" class="filter-grey"/>
+					</a>
+					<a href="setting.html" target="" >
+						<i class="fa-solid fa-gear pr-3" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;margin-top: 5px;"></i>
+					</a>					
+                    <!-- sign out -->
+					<i class="fa-solid fa-power-off header-icon pr-2 signout" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                </div>
+            </div><!-- ============ Body content start ============= -->
+            <div class="main-content">
+                <div class="breadcrumb mb-0">
+				<div class="row pb-3" style="width: 100%;">
+                    <h4 class="mr-2 mrahtitle col-lg-11 col-md-10 col-sm-8 col-xs-8 ml-0 pl-0 " style="padding-right: 15px !important;padding-top: 0.35rem !important;"></h4>
+                </div>
+                </div>
+                <div class="separator-breadcrumb border-top"></div>
+                <div class="row mainrow mb-5">			
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
+						<div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4" style="overflow: inherit;">
+							<div class="card-header-rose text-center text-1 p-1">معلومات شخصيه</div>
+							<div class="card-body text-center pt-4 pb-4">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+									<div class="row ">
+										<form class="maxwidth">
+											<div role="group" class="col-lg-12 col-md-12 col-sm-12	col-xs-12 form-group c">
+												<label class=" text-1">
+												<span class="cleardd">الاسم</span>
+												</label>
+												<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+													<input class="form-control c" name="name" type="text" placeholder="" aria-label="" aria-describedby="basic-addon1" >
+												</div>
+											</div>
+											<div role="group" class="col-lg-12 col-md-12 col-sm-12	col-xs-12 form-group">
+												<label class=" text-1">
+												<span class="cleardd">البريد الالكتروني</span>
+												</label>
+												<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+													<input class="form-control c dirltr" name="email" type="text" placeholder="" aria-label="" aria-describedby="basic-addon1" disabled>
+												</div>
+											</div>
+											<div role="group" class="col-lg-12 col-md-12 col-sm-12	col-xs-12 form-group">
+												<label class=" text-1">
+												<span class="cleardd">رقم الجوال</span>
+												</label>
+												<div class="input-group mb-0 col-lg-12 col-md-12 col-sm-12	col-xs-12 p-0">
+													<input class="form-control c" name="mobile" type="text" inputmode="decimal" placeholder="" aria-label="" aria-describedby="basic-addon1"   >
+												</div>
+											</div>
+										</form>
+										<button class="btn btn-outline-tourchred btn-lg width90 ma mt-3 presubmit" type="button" >تحديث</button>
+										<button class="btn btn-tourchred btn-lg width90 ma mt-2 submituser" style="display:none;" type="button" >تأكيد</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>			
+            </div>
+        </div>
+    </div><!-- ============ Search UI Start ============= -->
+	<!-- ============ LOADER MODAL ============= -->
+    <div class="modal fade loader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered " style="width: fit-content;  max-width: 700px;	margin: 1.75rem auto;">
+			<div class="spinner-bubble spinner-bubble-primary m-5"></div>
+		</div>
+    </div>
+<div>
+    <script src="js/plugins/jquery-3.7.1.min.js"></script>
+    <script src="js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="js/scripts/script.min.js"></script>
+    <script src="js/scripts/sidebar.compact.script.min.js"></script>
+    <!-- <script src="js/scripts/customizer.script.min.js"></script> -->
+    <!-- <!-- <script src="js/plugins/echarts.min.js"></script> -->
+    <!-- <!-- <script src="js/scripts/echart.options.min.js"></script> -->
+    <!-- <!-- <script src="js/scripts/dashboard.v1.script.min.js"></script> -->
+    <!-- <script src="js/plugins/dropzone.min.js"></script> -->
+    <!-- <script src="js/scripts/dropzone.script.min.js"></script> -->
+    <!-- <script src="js/plugins/cropper.min.js"></script> -->
+    <!-- <script src="js/scripts/cropper.script.min.js"></script> -->
+    <!-- <script src="js/plugins/datepicker/bootstrap-datepicker.min.js"></script> -->
+    <!-- <script src="js/plugins/datepicker/locales/bootstrap-datepicker.ar.min.js"></script> -->
+	<!-- <!-- <script src="js/plugins/datatables.min.js"></script> -->
+	<script src="js/plugins/allfontawesome7.js"></script>
+	<script src="js/plugins/Semantic/semantic.min.js"></script>
+	<script src="js/scripts/tooltip.script.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+	<script src="js/calculations.js"></script>
+
+</div>
+<script>
+$(document).ready(function(){
+
+// For verify php
+var username;
+const leadzero = (num, places) => String(num).padStart(places, '0')				//userdataid = leadzero(identifier, 4)
+
+// verify login credintials and retreive Bussniess data
+var start = new Date().getTime();
+ $.ajax({	
+	type: 'POST',	
+	url    : "php/verify.php",
+ })
+ .done(function(response) {												//console.log(response); 
+ var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+
+	if ( response.id == 'success' ) {		
+	
+		userid = response.data.userid;
+		
+		if ( response.data.mobile !== null ) { 	mobile = response.data.mobile;	mobile = 0+mobile; } else { mobile = ''; }
+		if ( response.data.name !== null ) { 	name = response.data.name; } else { name = ''; }
+		if ( response.data.email !== null ) { 	email = response.data.email; } else { email = ''; }
+		//pass = response.data.pass;
+		mrah = response.data.mrah;
+		time = response.data.time;
+		<!-- marketvalue = response.data.marketvalue; -->
+		
+		<!-- if ( response.data.mrahid && response.data.mrahname ) { -->
+			<!-- mrahid = response.data.mrahid; -->
+			<!-- mrahname = response.data.mrahname; -->
+			
+			<!-- $( ".title" ).find("h1").html(name); -->
+		<!-- }  -->
+			$( ".mrahtitle" ).html('إعدادات');
+		<!-- else { -->
+			<!-- console.log("not sucess"); -->
+			<!-- showalert('danger','لم تقم بإختيار المراح'); -->
+			<!-- setTimeout(function() {    window.location.replace("index.html");	}, 5000); -->
+		<!-- } -->
+	} else {
+		console.log("not sucess");
+		window.location.replace("login.html");
+	}
+  });
+  
+	let isSubmitting = false;
+	
+	setTimeout(function() {    
+		$('input[name^="name"]').val( name ); 
+		$('input[name^="email"]').val( email ); 
+		$('input[name^="mobile"]').val( mobile );
+	}, 500);
+
+
+
+
+	$(document).on("click", ".presubmit", function(){
+		// Hide pay debt form
+		if ( $(this).siblings().last().is(":visible") && !$(this).siblings().last().is(":button") ) { 
+			$(this).siblings().last().slideUp(250);
+		}
+		// Adjust button width 
+		if ( $(this).hasClass("width46") ) {
+			$(this).next().removeClass('maxwidth');
+			$(this).next().addClass('width46');
+		}
+		$(this).slideUp();
+		$(this).next().delay(500).slideDown(250);
+	});
+
+	$(document).on("click", ".submituser", function(){
+		console.log("submituser");
+		var submitbtn = $(this);
+
+		var form = $(this).closest(".row").find("form");
+		var formData = $(form).serialize();
+		formData = formData + "&key=edit"; 		
+		console.log(formData);
+		var start = new Date().getTime();
+		$.ajax({
+			type: 'POST',
+			url: 'php/user.php',    
+			data: formData,
+			beforeSend: function() {
+				if (isSubmitting) {		return false; 	}	// abort the ajax call
+				isSubmitting = true;
+				submitbtn.prop('disabled', true).css({  "background-color": "#a7a4a4",   "border-color": "#fff" });
+			},
+			complete: function() {
+				isSubmitting = false;
+				submitbtn.prop('disabled', false).css({  "background-color": "",   "border-color": "" });
+			}		
+		})
+		.done(function(response) {
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			var status = response.id;			
+			var statusmessage = response.message;		showalert(status,statusmessage);		
+		});
+	});
+	
+ 	if (localStorage.getItem('status') !== null && localStorage.getItem('statusmessage') !== null) {		
+		showalert(localStorage.getItem('status'),localStorage.getItem('statusmessage'));
+		localStorage.removeItem('status');	localStorage.removeItem('statusmessage');	
+	}
+	
+});
+		
+
+	$(document).on("click", ".cleardd", function(){	
+		 if ( $(this).parent().next().hasClass('ui') ) {
+			$(this).parent().next().dropdown('clear');
+		 } else {	
+			$(this).parent().next().find("input").val('');
+		 }
+	});
+	
+	$(document).on("click", ".close", function(){
+		$(this).closest(".modal").modal('hide');
+	});
+
+	$(document).on("click", ".closealert", function(){	//console.log('closealert');
+		$(this).closest(".alert-card").remove();
+	});
+
+</script>
+
+<ul class="nav nav-tabs fixed-bottom nav-justified" style="background: white;-top: 1px solid #6d6d71;border-radius: 5px;margin: 1px;border: 1px solid #6d6d71;padding-right: 0;">
+   <li class="nav-item pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="index.html">
+	<i class="fa fa-home text-125"></i><br>الرئيسية</a>
+  </li>
+   <li class="nav-item pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="stats.html">
+	<i class="fa fa-signal text-125"></i><br>إحصائيات</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="sheep.html">
+	<i class="fa fa-tasks text-125"></i><br>إدارة</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="feed.html">
+	<i class="fa fa-cubes text-125"></i><br>أعلاف</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="water.html">
+	<i class="fa fa-tint text-125"></i><br>مياه</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="others.html">
+	<i class="fa fa-syringe text-125"></i><br>اخرى</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="spending.html">
+	<i class="fa fa-coins text-125"></i><br>مصاريف</a>
+  </li>
+</ul>
+
+</body>
+
+</html>

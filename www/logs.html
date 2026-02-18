@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>مراح</title>
+	<link rel="icon" type="image/png" href="imgs/icons/favicon.ico">
+	<link rel="apple-touch-icon" href="imgs/icons/apple-touch-icon.png">
+    <link href="css/themes/lite-purple.min.css" rel="stylesheet">
+    <link href="css/extra/animatioin.css" rel="stylesheet">
+    <link href="css/extra/iosfix.css" rel="stylesheet">
+    <link href="css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="css/plugins/dropzone.min.css" /> -->
+	<link href="css/plugins/perfect-scrollbar.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="css/plugins/cropper.min.css" /> -->
+    <link rel="stylesheet" href="css/plugins/animate.css" />
+    <!-- <link rel="stylesheet" href="../dist-assets/css/plugins/datepicker/bootstrap-datepicker.css" /> -->
+    <!-- <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker.min.css" /> -->
+    <!-- <link rel="stylesheet" href="css/plugins/datepicker/bootstrap-datepicker3.min.css" /> -->
+	<script src="js/plugins/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/plugins/Semantic/semantic.rtl.min.css">
+	<!-- <script src="js/scripts/customizer.script.min.js"></script> -->
+	<!-- <script src="js/calculations.js"></script> -->
+
+<script>
+
+</script>
+
+</head>
+
+<style>
+.Addmodal .ui.fluid.dropdown {
+    width: calc(100% - 35px);
+}
+.Editmodal .ui.fluid.dropdown {
+    width: calc(100% - 35px);
+}
+.ui.fluid.dropdown.tagnumberdd {
+    width: 100%;
+}
+.Editmodal .ui.fluid.dropdown {
+    width: 100%;
+}
+
+.ui.selection.dropdown > .text {
+  margin-left: 0;
+}
+
+.checkbox, .radio.horizontal {
+  margin: 2px 0px 0px 0px;
+  width: 33%;
+}
+
+.title.header {
+	color: rgba(0, 0, 0, 0.83) !important;
+}
+</style>
+
+
+<body class="text-left">
+    <div class="app-admin-wrap layout-sidebar-compact clearfix">
+        <div class="main-content-wrap d-flex flex-column mb-5">
+            <div class="main-header">
+                <div class="logo" style="display:block;">
+					<img id="logo" src="imgs/logo_out.jpg" >
+                </div>
+                <div class="title mobilehide" style="margin-right: 9vw;">
+					<h1></h1>
+                </div>
+                <!-- <div class="menu-toggle" style="display:none;"><div></div><div></div><div></div></div> -->
+                
+                <div style="margin: auto; display:none;"></div>
+                <div class="header-part-right">
+                    <!-- Full screen toggle -->
+                    <!-- <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i> -->
+					<!-- Notificaiton -->
+                    <div class="dropdown pl-3" style="margin-bottom:-6px">
+                        <div class="badge-top-container" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- <span class="badge badge-primary">3</span> -->
+                            <!-- <i class="i-Bell text-muted header-icon"  -->
+							<i class="fa-regular fa-bell" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                        </div>
+					</div>
+                    <!-- Customizer Dropdown -->
+                    <!-- <i class="i-Gear header-icon  d-sm-inline-block callcustomizer" ></i> -->
+					<a href="finance.html" target="">
+						<img src="imgs/sar.svg"  alt="Description of the image" width="22" height="22" class="filter-grey"/>
+					</a>
+					<a href="setting.html" target="" >
+						<i class="fa-solid fa-gear pr-3" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;margin-top: 5px;"></i>
+					</a>					
+                    <!-- sign out -->
+					<i class="fa-solid fa-power-off header-icon pr-2 signout" style="height: 21px;width: 21px;color: #b3b2b4;margin-right: 11px;"></i>
+                    <!-- Notificaiton End -->
+                    <!-- User avatar dropdown -->
+                    <!-- <div class="dropdown"> -->
+                        <!-- <div class="user col align-self-end "> -->
+                            <!-- <img src="" id="avatar" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                            <!-- <div class="dropdown-menu dropdown-menu-left" aria-labelledby="avatar"> -->
+                                <!-- <div class="dropdown-header"> -->
+                                    <!-- <i class="mr-1 empname"></i>   -->
+                                <!-- </div> -->
+                                <!-- <a class="dropdown-item signout" >خروج</a> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+            </div><!-- ============ Body content start ============= -->
+            <div class="main-content">
+                <div class="breadcrumb mb-0">
+				<div class="row pb-3" style="width: 100%;">
+                    <h1 class="mr-2 mrahtitle col-lg-11 col-md-10 col-sm-8 col-xs-8 ml-0 pl-0 " style="padding-right: 15px !important;padding-top: 6px;">سجل العمليات</h1>
+					<!-- <div class="dropdown col-lg-1 col-md-2 col-sm-4 col-xs-4 pl-0 " > -->
+					  <!-- <button class="btn btn-outline-success btn-lg  dropdown-toggle maxwidth" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">إضافه</button> -->
+					  <!-- <div class="dropdown-menu" > -->
+						<!-- <a class="dropdown-item Add" href="#">أغنام مفرد</a> -->
+						<!-- <a class="dropdown-item Addmultiple" href="#">أغنام جمله</a> -->
+						<!-- <a class="dropdown-item Addmultipleevent" href="#">حدث جماعي</a> -->
+					  <!-- </div> -->
+					<!-- </div> -->
+                </div>
+                </div>
+                <div class="separator-breadcrumb border-top"></div>
+                <div class="row mainrow">
+					<div class="search-container" id="searchContainer">
+						<input type="text" class="search-input" placeholder="" id="searchInput" />
+							<button class="search-btn" id="searchBtn">
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</button>
+							<button class="clear-search-btn" id="clearsearchBtn">
+								<i class="fa-solid fa-minus"></i>
+							</button>
+					</div>
+
+					<!-- <h1 class="test">asdasdasd</h1>				 -->
+				</div>			
+            </div>
+        </div>
+    </div><!-- ============ Search UI Start ============= -->
+    <div class="modal fade columntoggle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+				<div class="modalrow">
+					<div class="col-md-12 modalcard">
+                        <div class="card">
+							<div class="card-header-modal-green m"><h4 class="marginless"style="">إظهار وإخفاء الأعمده</h4></div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row checkboxes">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <form>
+								    <div class="row">
+										<div class="col-xs-12 col-sm-12 col-md-12 mb-1 centered hideshow"><label class="checkbox checkbox-outline-primary" ><input class="global" name="select" type="checkbox" checked ><span>تحديد الكل</span><span class="checkmark"></span></label></div>									
+									</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+	<!-- ============ LOADER MODAL ============= -->
+    <div class="modal fade loader" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg " style="width: fit-content;  max-width: 700px;	margin: 1.75rem auto;">
+			<div class="spinner-bubble spinner-bubble-primary m-5"></div>
+		</div>
+    </div>
+	<!-- ============ Search UI End ============= -->
+    <div class="customizer" style="display:none;" >
+        <div class="handle" style="display:none;"><i class="i-Gear spin"></i></div>
+        <div class="customizer-body" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+            <div class="accordion" id="accordionCustomizer">
+                <div class="card">
+                    <div class="card-header-modal-green" id="headingOne">
+                        <p class="mb-0">تغيير لون الموقع</p>
+                    </div>
+                    <div class="collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionCustomizer">
+                        <div class="card-body">
+                            <div class="colors sidebar-colors"><a class="color gradient-purple-indigo" data-sidebar-class="sidebar-gradient-purple-indigo"><i class="i-Eye"></i></a><a class="color gradient-black-blue" data-sidebar-class="sidebar-gradient-black-blue"><i class="i-Eye"></i></a><a class="color gradient-black-gray" data-sidebar-class="sidebar-gradient-black-gray"><i class="i-Eye"></i></a><a class="color gradient-steel-gray" data-sidebar-class="sidebar-gradient-steel-gray"><i class="i-Eye"></i></a><a class="color dark-purple active" data-sidebar-class="sidebar-dark-purple"><i class="i-Eye"></i></a><a class="color slate-gray" data-sidebar-class="sidebar-slate-gray"><i class="i-Eye"></i></a><a class="color midnight-blue" data-sidebar-class="sidebar-midnight-blue"><i class="i-Eye"></i></a><a class="color blue" data-sidebar-class="sidebar-blue"><i class="i-Eye"></i></a><a class="color indigo" data-sidebar-class="sidebar-indigo"><i class="i-Eye"></i></a><a class="color pink" data-sidebar-class="sidebar-pink"><i class="i-Eye"></i></a><a class="color red" data-sidebar-class="sidebar-red"><i class="i-Eye"></i></a><a class="color purple" data-sidebar-class="sidebar-purple"><i class="i-Eye"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card"> -->
+                    <!-- <div class="card-header-modal-green" id="headingOne"> -->
+                        <!-- <p class="mb-0">RTL</p> -->
+                    <!-- </div> -->
+                    <!-- <div class="collapse show" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionCustomizer"> -->
+                        <!-- <div class="card-body"> -->
+                            <!-- <label class="checkbox checkbox-primary"> -->
+                                <!-- <input id="rtl-checkbox" type="checkbox" /><span>Enable RTL</span><span class="checkmark"></span> -->
+                            <!-- </label> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+<div>
+    <script src="js/plugins/jquery-3.7.1.min.js"></script>
+    <script src="js/plugins/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="js/scripts/script.min.js"></script>
+    <script src="js/scripts/sidebar.compact.script.min.js"></script>
+    <!-- <script src="js/scripts/customizer.script.min.js"></script> -->
+    <!-- <script src="js/plugins/echarts.min.js"></script> -->
+    <!-- <script src="js/scripts/echart.options.min.js"></script> -->
+    <!-- <script src="js/scripts/dashboard.v1.script.min.js"></script> -->
+    <!-- <script src="js/plugins/dropzone.min.js"></script> -->
+    <!-- <script src="js/scripts/dropzone.script.min.js"></script> -->
+    <!-- <script src="js/plugins/cropper.min.js"></script> -->
+    <!-- <script src="js/scripts/cropper.script.min.js"></script> -->
+    <!-- <script src="js/plugins/datepicker/bootstrap-datepicker.min.js"></script> -->
+    <!-- <script src="js/plugins/datepicker/locales/bootstrap-datepicker.ar.min.js"></script> -->
+	<!-- <script src="js/plugins/datatables.min.js"></script> -->
+	<script src="js/plugins/allfontawesome7.js"></script>
+	<script src="js/plugins/Semantic/semantic.min.js"></script>
+	<script src="js/scripts/tooltip.script.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+	<script src="js/calculations.js"></script>
+</div>
+<script>
+$(document).ready(function(){
+
+// For verify php
+var username;
+const leadzero = (num, places) => String(num).padStart(places, '0')				//userdataid = leadzero(identifier, 4)
+// verify login credintials and retreive Bussniess data
+var start = new Date().getTime();
+ $.ajax({	
+	type: 'POST',	
+	url    : "php/verify.php",
+ })
+ .done(function(response) {												//console.log(response); 
+ var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+
+	if ( response.id == 'success' ) {		
+	
+		userid = response.data.userid;
+		name = response.data.name;
+		mobile = response.data.mobile;
+		email = response.data.email;
+		//pass = response.data.pass;
+		mrah = response.data.mrah;
+		time = response.data.time;
+		<!-- if ( response.data.mrahid && response.data.mrahname ) { -->
+			<!-- mrahid = response.data.mrahid; -->
+			<!-- mrahname = response.data.mrahname; -->
+			
+			<!-- $( ".title" ).find("h1").html(name); -->
+			<!-- $( ".mrahtitle" ).html('مراح '+mrahname); -->
+		<!-- } else { -->
+			<!-- console.log("not sucess"); -->
+			<!-- showalert('danger','لم تقم بإختيار المراح'); -->
+			<!-- setTimeout(function() {    window.location.replace("index.html");	}, 5000); -->
+		<!-- } -->
+	} else {
+		console.log("not sucess");
+		window.location.replace("login.html");
+	}
+  });
+  
+  
+let isSubmitting = false;
+var start = new Date().getTime();
+$.ajax({
+	type: 'POST',
+	url    : 'php/logs.php',
+	data: ({mobile: 'hi'}),
+})
+.done(function(response) {
+	
+	var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+	setTimeout(function() {    $('.loader').modal('hide');	}, 500);
+	var j = 0;
+	var status = response.id;		
+	<!-- var statusmessage = response.message; -->
+	if ( status == 'success' ) {
+		var lognum = response.lognum;
+		const leadzero = (num, places) => String(num).padStart(places, '0')				//userdataid = leadzero(identifier, 4)
+
+		if ( lognum > 0 ) {	
+			newcard = '';
+			for (var i = 0; i < response[j].length; i++) {
+				<!-- newcard += '<div class="title header-'+response[j][i].title+'">'; -->
+				newcard += '<div class="title header">';
+				newcard += '<i class="dropdown icon"></i>'+response[j][i].title;
+				newcard += '<span style="float: left;">'+response[j][i].timeadded+'</span>';
+				newcard += '</div>';
+
+				newcard += '<div class="content">';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-1"></div>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pr-3 pl-3">';
+				
+				newcard += '<div class="row ">';
+				
+				newcard += '<span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-c-blue  text-1 text-justify p-0 ma ">'+response[j][i].details+'</span>';
+				newcard += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 separator-breadcrumb border-top mb-2 mt-2"></div>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">المستخدم</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-green text-1 text-left p-0 ma ">'+response[j][i].name+'</span>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">المراح</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-green text-1 text-left p-0 ma ">'+response[j][i].mrahname+'</span>';
+				newcard += '<span class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-muted text-1  mb-0 p-0 ">التصنيف</span>';
+				newcard += '<span class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-c-green text-1 text-left p-0 ma ">'+response[j][i].category+'</span>';
+
+				newcard += '</div>';
+				newcard += '</div>';
+				newcard += '</div>';
+			}
+			newcard = '<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" ><div class="ui styled  accordion mb-3" style="margin: auto;width: 93%;">'+newcard+'</div></div>';
+			$('.mainrow').append(newcard);
+
+			j++;
+		} else {
+			newcard = '<p class=" text-24 maxwidth text-center mb-3">لا يوجد عمليات</p>';
+			$('.mainrow').append(newcard);
+		}
+		$('.ui.accordion').accordion({	exclusive: false	});
+	}
+	
+});	
+
+// Search Input
+    const container = document.getElementById('searchContainer');
+    const searchBtn = document.getElementById('searchBtn');
+    const clearsearchbtn = document.getElementById('clearsearchBtn');
+    const searchInput = document.getElementById('searchInput');
+
+	// Search Active Toggle
+    searchBtn.addEventListener('click',()=> {	container.classList.toggle('active');	if (container.classList.contains('active')) { searchInput.focus(); } });
+    clearsearchbtn.addEventListener('click', () => {		searchInput.value = '';	debouncedFilter();    });
+    document.addEventListener('click', (e) => {      if (!container.contains(e.target)) {        container.classList.remove('active');      }   });
+	
+	// Simple debounce helper (no extra plugin needed)
+	function debounce(func, wait) {
+		var timeout;
+		return function executedFunction() {
+		  var context = this;      var args = arguments;      var later = function() {	timeout = null;	func.apply(context, args);      };
+		  clearTimeout(timeout);      timeout = setTimeout(later, wait);
+		};
+	}
+
+	var filterFunction = function() {
+		var searchInputvalue = $("#searchInput").val().toLowerCase().trim();
+		// Reset and collapse all accordians
+		$(".content ").each(function() {		$(this).prev().removeClass('hidden').removeClass('active');		$(this).removeClass('active');	});	
+		if (searchInputvalue.length > 0) {
+			$(".content ").each(function() {
+				if (!$(this).prev().text().includes(searchInputvalue)) {		//search accordian title
+					if (!$(this).text().includes(searchInputvalue)) {			//search accordian content
+						$(this).prev().addClass('hidden');
+					}
+				}
+			});
+		}
+		// Show how manu sheep filtered
+		<!-- var filterflagcount = 0; -->
+		<!-- $(".filterflag").each(function(index, element) { -->
+			<!-- if ( $(this).prev().is(':visible')) { -->
+				<!-- filterflagcount++; -->
+			<!-- } -->
+		<!-- }); -->
+		<!-- $('<h1 class="filterflagcount" style="position: absolute;top: -45px;color: #24bbee;background: linear-gradient(to right, transparent 0% 40%, white 40% 60%, transparent 60% 100% );">'+filterflagcount+'</h1>').insertBefore(".filterbutton"); -->
+		<!-- $('.filterflagcount').fadeOut(5000, function() {			$(this).remove();		}); -->
+	};
+
+  // Apply debounce – 350 ms is a good balance
+  var debouncedFilter = debounce(filterFunction, 350);
+
+  $("#searchInput").on("keyup", debouncedFilter);
+
+  // Optional: button also triggers search
+  $("#searchBtn").on("click", function() {    debouncedFilter();  });
+
+ 	if (localStorage.getItem('status') !== null && localStorage.getItem('statusmessage') !== null) {		
+		showalert(localStorage.getItem('status'),localStorage.getItem('statusmessage'));
+		localStorage.removeItem('status');	localStorage.removeItem('statusmessage');	
+	}	
+	
+});
+
+$('.close').on("click",function(){
+	 $(this).closest(".modal").modal('hide');
+});
+
+</script>
+
+<ul class="nav nav-tabs fixed-bottom nav-justified" style="background: white;-top: 1px solid #6d6d71;border-radius: 5px;margin: 1px;border: 1px solid #6d6d71;padding-right: 0;">
+   <li class="nav-item pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="index.html">
+	<i class="fa fa-home text-125"></i><br>الرئيسية</a>
+  </li>
+   <li class="nav-item pt-2 " >
+    <a class="nav-link p-0" aria-current="page" href="stats.html">
+	<i class="fa fa-signal text-125"></i><br>بيانات</a>
+  </li>
+   <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="sheep.html">
+	<i class="fa fa-tasks text-125"></i><br>إدارة</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="feed.html">
+	<i class="fa fa-cubes text-125"></i><br>أعلاف</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="water.html">
+	<i class="fa fa-tint text-125"></i><br>مياه</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="others.html">
+	<i class="fa fa-syringe text-125"></i><br>اخرى</a>
+  </li>
+  <li class="nav-item pt-2 " >
+    <a class="nav-link  p-0" aria-current="page" href="spending.html">
+	<i class="fa fa-coins text-125"></i><br>مصاريف</a>
+  </li>
+</ul>
+
+</body>
+
+</html>

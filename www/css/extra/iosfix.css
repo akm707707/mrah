@@ -1,0 +1,54 @@
+/* fix elevated text in ios browsers */  
+@supports (-webkit-touch-callout: none) {
+	input:not([type="password"]) {
+		padding-top: 10px !important;
+		/* color: red !important; */
+	}
+	input .c {
+		padding-top: 20px !important;
+		/* color: red !important; */
+	}
+	.btn:not(.rounded-circle)	{
+		padding-top: 10px !important;
+		/* color: red !important; */
+	}
+	/* button:not(.mini) { */
+	button {
+		/* padding-top: 100px !important; */
+		/* color: red !important; */
+	}
+	/* h1, h2, h3, h4, h5, h6, .card-title, .text-title { */
+	/* .card-title, .text-title { */
+			/* padding-top: 5px !important; */
+	/* } */
+	.card h1,
+	.card h2,
+	.card h3,
+	.card h4,
+	.card h5,
+	.card h6 {
+		padding-top: 5px !important;
+	}
+	
+	.ui.mini.red.circular.label {
+	  margin-right: 1.25rem !important;
+	  min-width: 2em !important;       /* or 36px, etc. */
+	  height: 1.0em !important;
+	  line-height: 2em !important;
+	  font-size: 1.1em !important;       /* optional: larger number */
+	  padding: 0 !important;             /* reset padding */
+	  text-align: center;
+	  padding-top: 3px !important;
+	}
+
+	.scale-075 {
+	  transform: scale(0.75);          /* 150% size */
+	  transform-origin: top left;     /* optional: control from which point it grows */
+	}
+
+	.dummybadge {
+		padding-top: 5px !important;
+	}
+
+}
+

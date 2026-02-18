@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>مراح نك</title>
+	<link rel="icon" type="image/png" href="imgs/icons/favicon.ico">
+	<link rel="apple-touch-icon" href="imgs/icons/apple-touch-icon.png">
+  <link href="css/themes/lite-purple.min.css" rel="stylesheet">
+  <link href="css/extra/animatioin.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/plugins/sweetalert2.min.js"></script>
+  <script src="js/scripts/sweetalert.script.min.js"></script>
+<script>
+var mobile;
+var trimmedmobile;
+var start = new Date().getTime();
+ $.ajax({	
+	type: 'POST',	
+	url    : "php/verify.php",
+ })
+ .done(function(response) {												//console.log(response); 
+ var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+	if ( response.id === 'success' ) {					console.log("sucess");		//console.log(response.data.mobile);
+		trimmedmobile = response.data.mobile;
+	} else {
+		console.log("not sucess");
+	}
+  });
+</script>
+</head>
+<style>
+ #forget, #signin {  cursor: pointer;	}
+input { 
+  	-webkit-align-self: center !important;	
+ }
+ 
+ /* fix elevated text in ios browsers */  
+@supports (-webkit-touch-callout: none) {
+	input:not([type="password"]) {
+		padding-top: 14px !important;
+		/* color: red !important; */
+	}
+	button {
+		padding-bottom: 0px !important;
+		padding-top: 5px !important;
+	}
+}
+</style>
+<div class="auth-layout-wrap" style="background-image: url(imgs/bg.jpg)">
+    <div class="auth-content">
+        <div class="card o-hidden">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="p-4">
+                        <div class="auth-logo text-center mb-4"><img src="imgs/logo_out.jpg" alt=""></div>
+						<div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: none;">
+							<div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
+							<span class="swal2-success-line-tip"></span>
+							<span class="swal2-success-line-long"></span>
+							<div class="swal2-success-ring"></div> 
+							<div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
+							<div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+						</div>
+						<div class="swal2-icon swal2-error swal2-animate-error-icon" style="display: none;">
+							<span class="x-mark animate-x-mark">
+								<span class="line left"></span>
+								<span class="line right"></span>
+							</span>
+						</div>                        
+						<form id="login">
+                            <div class="form-group c" >											<!-- mobile input -->
+                                <label class="m" for="mobile">رقم الجوال</label>
+                                <!-- <input class="form-control m form-control-rounded c" id="mobile" name="mobile" type="text" value="0558520333" maxlength="20"> -->
+                                <input class="form-control m form-control-rounded c" id="mobile" name="mobile" type="text" placeholder="0500000000" maxlength="10">
+                            </div>
+							<div class="col-md-12" style="display: none;">						<!-- spinner -->
+								<div class=" mb-4">
+									<div class="" <div class="" style="display: flex;justify-content: center;align-items: center;">
+										<div class="spinner spinner-success "></div>
+									</div>
+								</div>
+							</div>
+                            <div class="form-group c" style="display: none;" dir="ltr">			<!-- Verification inputs -->
+                                <label class="m" style="width:100%;">رمز التفعيل</label>
+								<input class="form-control m form-control-rounded c newcode V1" id="V1" type="tel" maxlength="6" value="" autocomplete="one-time-code" style="letter-spacing: 10px; ">
+								<!-- <input class="form-control m c code V1" id="V1" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V2" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V3" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V4" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V5" type="tel" maxlength="1" value=""> -->
+								<!-- <input class="form-control m c code" id="V6" type="tel" maxlength="1" value=""> -->
+                            </div>
+                        </form>
+                            <button class="btn btn-rounded btn-light btn-block mt-2 login" style=" " >تسجيل الدخول</button>
+                            <button class="btn btn-rounded btn-danger btn-block mt-2" style="display: none;" id="logout-btn" >تسجيل الخروج</button>
+							<div id="recaptcha-container"></div>  <!-- Remove style="display:none;" -->
+                            <!-- <button class="btn btn-rounded btn-light btn-block mt-2 recovery" style="" >إسترجاع</button> -->
+                            <!-- <button class="btn btn-rounded btn-light btn-block mt-2 change" style="" >تغيير</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- Login Form -->
+  <div id="phone-section" style="display:none;">
+    <input type="tel" id="phone-number" value="+966558520333" />
+    <button id="send-code-btn">Send Verification Code</button>
+  </div>
+
+  <!-- Code Verification -->
+  <div id="verification-section" style="display:none;">
+    <input type="text" id="verification-code" placeholder="Enter 6-digit code" maxlength="6" />
+    <button id="verify-code-btn">Verify Code</button>
+    <button onclick="document.getElementById('phone-section').style.display='block'; document.getElementById('verification-section').style.display='none';">Back</button>
+  </div>
+
+  <!-- Logged In View -->
+  <div id="logged-in-section" style="display:none;">
+    <p><strong>Welcome!</strong></p>
+    <p id="user-phone">Logged in as: <strong>Loading...</strong></p>
+    <!-- <button id="logout-btn">Logout</button> -->
+  </div>
+
+  <div id="status" style="display:none;"></div>
+  <!-- <div id="recaptcha-container" style="display:none;"></div> -->
+
+<div class="scripts">
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+	<script src="js/calculations.js"></script>
+</div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAqUHWq6OLkCe4as6GLqK7-TiI0vR0f7aQ",
+      <!-- authDomain: "emarah-df6f8.firebaseapp.com", -->
+      authDomain: "payond.net",
+      projectId: "emarah-df6f8",
+      storageBucket: "emarah-df6f8.appspot.com",
+      messagingSenderId: "1023382792114",
+      appId: "1:1023382792114:web:c8406aaf0025b4966ea6ab"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    let confirmationResult = null;
+    let recaptchaVerifier = null;
+
+    function setupRecaptcha() {
+      if (recaptchaVerifier) recaptchaVerifier.clear();
+      recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+        size: 'invisible'
+      });
+    }
+	
+	<!-- function setupRecaptcha() { -->
+		<!-- if (recaptchaVerifier) recaptchaVerifier.clear(); -->
+		<!-- recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', { -->
+		<!-- size: 'normal'  // ← Change from 'invisible' to 'normal' -->
+		<!-- }); -->
+	<!-- } -->
+
+    // Check if user is already signed in (on page load/refresh)
+    auth.onAuthStateChanged((user) => {
+      if (user) {	console.log('User is signed in');
+		$(".swal2-success").delay(100).fadeIn(250);											// show success animation
+		$(".swal2-success").delay(5000).fadeOut(250);										// hide success animation
+		$(".newcode").val('');																// reset code 
+		<!-- $(".code").each(function(index, element) {  $(this).val('');	});					// reset code  -->
+		$("#login").children().last().delay(250).slideUp(250);								// hide verification codes
+		$("#logout-btn").slideDown(250);													// show dignout button
+		$("#login").children().slideUp(250);												// hide mobile input and label			
+		$(".login").slideUp(250);															// hide signin button	
+		
+		var start = new Date().getTime();
+		$.ajax({	
+			type: 'POST',	
+			url    : "php/login.php",
+			data: ({mobile: trimmedmobile}),
+		})
+		.done(function(response) {												//console.log(response); 
+			var end = new Date().getTime();		console.log('Seconds passed', ((end - start)/1000));
+			if ( response.id === 'success' ) {					
+				console.log("sucess");
+			} else {
+				console.log("not sucess");
+			}
+			console.log(response.alert);
+			
+			if ( response.alert === 'User Exists' ) {
+				window.location.replace("index.html");
+				<!-- setTimeout(function() {    window.location.replace("index.html");	}, 10000); -->
+			}
+			if ( response.alert === 'New User' ) {
+				window.location.replace("setting.html");
+				<!-- setTimeout(function() {    window.location.replace("setting.html");	}, 10000); -->
+			}
+		});
+      } else {	console.log('User is signed out');
+		$("#login").children().first().slideDown(250);									// show mobile input and label			
+		$(".login").slideDown(250);														// show signin button	
+		$("#logout-btn").slideUp(250);													// hide dignout button
+		$("#login").children().last().delay(250).slideUp(250);							// hide verification codes
+		$("#login").children().last().prev().slideUp(250);								// hide spinner
+      }
+    });
+
+    // Send code
+    document.getElementById('send-code-btn').addEventListener('click', async () => {
+      const phoneNumber = document.getElementById('phone-number').value.trim();
+      const statusEl = document.getElementById('status');
+
+      if (!phoneNumber) {
+		showalert('danger','فضلاً أدخل رقم الجوال');
+		statusEl.textContent = 'فضلاً أدخل رقم الجوال';       statusEl.className = 'error';
+		return;
+      }
+
+      statusEl.textContent = 'جاري إرسال الرمز...';
+      document.getElementById('send-code-btn').disabled = true;
+      setupRecaptcha();
+
+      try {
+        confirmationResult = await auth.signInWithPhoneNumber(phoneNumber, recaptchaVerifier);
+        statusEl.textContent = 'تم إرسال الرمز';
+        statusEl.className = 'success';
+		
+		$("#login").children().last().prev().slideUp(250);									// hide spinner
+		$("#login").children().last().delay(250).slideDown(250);							// show verification codes
+		setTimeout( function() { document.getElementById("V1").focus(); }, 500);			// V1 focus
+
+      } catch (error) {
+        <!-- console.error(error); -->
+        <!-- statusEl.textContent = error.message || 'خطأ في في إرسال الرمز'; -->
+        <!-- statusEl.className = 'error'; -->
+        <!-- setupRecaptcha(); -->
+		console.error('Firebase Auth Error:', error);
+
+		let message = 'خطأ في إرسال الرمز، حاول مرة أخرى';
+
+		if (error.code === 'auth/captcha-check-failed') {
+		  message = 'فشل التحقق من reCAPTCHA، حاول مرة أخرى';
+		} else if (error.code === 'auth/too-many-requests') {
+		  message = 'تم تجاوز الحد المسموح للطلبات، حاول لاحقًا';
+		} else if (error.code === 'auth/invalid-phone-number') {
+		  message = 'رقم الجوال غير صحيح';
+		}
+
+		showalert('danger', message);
+		
+		$("#login").children().first().slideDown(250);										// show mobile input and label			
+		$(".login").slideDown(250);															// show signin button	
+		$("#logout-btn").slideUp(250);														// hide dignout button
+		$("#login").children().last().delay(250).slideUp(250);								// hide verification codes
+		$("#login").children().last().prev().slideUp(250);									// hide spinner
+
+      } finally {
+        document.getElementById('send-code-btn').disabled = false;
+      }
+    });
+
+    // Verify code
+    document.getElementById('verify-code-btn').addEventListener('click', async () => {
+      const code = document.getElementById('verification-code').value.trim();
+      const statusEl = document.getElementById('status');
+
+      if (!code || code.length !== 6) {
+		showalert('danger','رمز التفعيل يتكون من 6 أرقام');
+		statusEl.textContent = 'رمز التفعيل يتكون من 6 أرقام';		statusEl.className = 'error';
+		return;
+      }
+
+      statusEl.textContent = 'جاري التحقق ...';
+      document.getElementById('verify-code-btn').disabled = true;
+
+      try {
+        await confirmationResult.confirm(code);
+        // Success is handled by onAuthStateChanged
+      } catch (error) {		console.log(error);
+        console.error(error);
+        statusEl.textContent = 'رمز التفعيل خاطئ او منتهي';        statusEl.className = 'error';
+		showalert('danger','رمز التفعيل خاطئ او منتهي');
+
+		$(".swal2-error").delay(100).fadeIn(250);											// show error animation
+		$(".swal2-error").delay(5000).fadeOut(250);											// hide error animation
+		$(".newcode").val('');																// reset code 
+		<!-- $(".code").each(function(index, element) {  $(this).val('');	});					// reset code  -->
+		setTimeout( function() { document.getElementById("V1").focus(); }, 500);			// V1 focus
+		
+      } finally {
+        document.getElementById('verify-code-btn').disabled = false;
+      }
+    });
+
+    // Logout
+    document.getElementById('logout-btn').addEventListener('click', () => {	console.log('logout-btn clicked');
+      auth.signOut().then(() => {
+        document.getElementById('status').textContent = 'You have been logged out.';
+        document.getElementById('status').className = 'success';
+        document.getElementById('phone-number').value = '';
+      });
+    });
+	
+$( document ).ready(function() {
+
+ var test = '٠١٢٣٤٥٦٧٨٩';
+ console.log(a2e(test));
+$(window).on('load', function() {
+	$(".login").delay(200).slideDown(250);			// wait for 
+});
+
+// color login button 
+if( $("#mobile").val().length === 10 ) { Greenlogin(); } else { Greylogin(); }
+
+var arabic = new RegExp('^[\u0621-\u064A0-9\u0660-\u0669 ]+$');			
+var email = new RegExp('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$');
+var number = new RegExp('^[0-9\u0660-\u0669 ]+$');						
+
+$("#mobile").on("keyup",function(){
+	if( $(this).val().length === 10 ) { Greenlogin(); } else { Greylogin(); }
+});
+
+$("#mobile").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $(".login").click();
+    }
+});
+
+$(".login").on("click",function(){
+	mobile = $("#mobile").val();	
+	var form = $("#login");
+	
+	if ( !$("#mobile").val() ) { 
+		var field = 'فضلاً أدخل رقم الجوال'; 			showalert('danger',field);
+	} else if ( mobile.length < 10 ) { 
+		var field = 'رقم الجوال غير مكتمل'; 			showalert('danger',field);
+	} else if ( mobile.length > 10 ) { 
+		var field = 'رقم الجوال يتكون من 10 خانات فقط'; 	showalert('danger',field);
+	} else {
+		
+		form.children().slideUp(250);													// hide mobile input and label			
+		$(".login").slideUp(250);														// hide signin button	
+		trimmedmobile = mobile.substring(1);						
+		$('#phone-number').val('+966'+trimmedmobile+'');				
+		$("#send-code-btn").trigger( "click" );
+		form.children().last().prev().slideDown(250);									// show spinner
+	}
+});
+
+<!-- $(".code").on("keyup",function(){ -->
+	<!-- var thisinput = this.value;		 -->
+	<!-- if ( number.test(thisinput)) 	{	 -->
+		<!-- $(this).next().focus();	 -->
+	<!-- } else {  -->
+		<!-- $(this).val($(this).val().slice(0, -1));	 -->
+	<!-- } -->
+	
+    <!-- $(this).keydown(function (e) {		 -->
+		<!-- if (	e.keyCode==8 && !$(this).val()	) { -->
+			<!-- $(this).prev().val('');		 -->
+			<!-- $(this).prev().focus();		 -->
+		<!-- }	 -->
+	<!-- }); -->
+	
+	<!-- if( $('#V1').val() && $('#V2').val() && $('#V3').val() && $('#V4').val() && $('#V5').val() && $('#V6').val() ) { -->
+		<!-- var verificationcode = '';			 -->
+		<!-- $(".code").each(function(){ verificationcode += $(this).val(); });	 -->
+		<!-- $('#verification-code').val(verificationcode);	 -->
+		<!-- $(this).blur();	 -->
+		<!-- $("#verify-code-btn").trigger( "click" ); -->
+		<!-- console.log(verificationcode);	 -->
+	<!-- } 	 -->
+<!-- }); -->
+
+$(".newcode").on("keyup",function(){
+	if ( $(this).val().length === 6 ) {
+		var verificationcode = $(this).val();
+		verificationcode = a2e(verificationcode);
+		$('#verification-code').val(verificationcode);	
+		$(this).blur();	
+		$("#verify-code-btn").trigger( "click" );
+		console.log($(this).val());	
+	}
+});
+
+	$(document).on("click", ".close", function(){
+		$(this).closest(".modal").modal('hide');
+	});
+
+
+function Greenlogin()	{	$(".login").removeClass('btn-light').addClass('btn-success');		}
+function Greylogin()  	{	$(".login").removeClass('btn-success').addClass('btn-light');		}
+
+});	
+  </script>
