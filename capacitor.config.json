@@ -2,5 +2,7 @@
   "appId": "sa.mrah.tech",
   "appName": "Mrah Tech",
   "webDir": "www",
-  "//": "Forced sync for Capawesome - Feb 18 2026"
+  "ios": {
+    "bundleVersion": "2"
+  }
 }
