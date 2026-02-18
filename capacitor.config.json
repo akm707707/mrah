@@ -3,6 +3,6 @@
   "appName": "Mrah Tech",
   "webDir": "www",
   "ios": {
-    "bundleVersion": "3"
+    "bundleVersion": "4"
   }
 }
